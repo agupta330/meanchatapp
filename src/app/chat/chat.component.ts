@@ -33,8 +33,11 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       console.log(roomObj);
       if (roomObj != null && roomObj != undefined) {
         if (data.message.room === JSON.parse(localStorage.getItem("user")).room) {
-          this.chats.push(data.message);
-          this.msgData = { room: user.room, nickname: user.nickname, message: '' }
+          console.log(this.chats);
+          if (this.chats != undefined && this.chats != null) {
+            this.chats.push(data.message);
+          }
+          this.msgData = { room: roomObj.room, nickname: roomObj.nickname, message: '' }
           this.scrollToBottom();
         }
       }
@@ -56,6 +59,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     this.chatService.getChatByRoom(room).then((res) => {
       this.chats = res;
     }, (err) => {
+      this.chats = [];
       console.log(err);
     });
   }

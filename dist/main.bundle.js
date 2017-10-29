@@ -171,8 +171,11 @@ var ChatComponent = (function () {
             console.log(roomObj);
             if (roomObj != null && roomObj != undefined) {
                 if (data.message.room === JSON.parse(localStorage.getItem("user")).room) {
-                    this.chats.push(data.message);
-                    this.msgData = { room: user.room, nickname: user.nickname, message: '' };
+                    console.log(this.chats);
+                    if (this.chats != undefined && this.chats != null) {
+                        this.chats.push(data.message);
+                    }
+                    this.msgData = { room: roomObj.room, nickname: roomObj.nickname, message: '' };
                     this.scrollToBottom();
                 }
             }
@@ -192,6 +195,7 @@ var ChatComponent = (function () {
         this.chatService.getChatByRoom(room).then(function (res) {
             _this.chats = res;
         }, function (err) {
+            _this.chats = [];
             console.log(err);
         });
     };
