@@ -12,7 +12,6 @@ mongoose.connect('mongodb://admin:admin@ds013918.mlab.com:13918/mean-chat')
   .catch((err) => console.error(err));
 
 var chat = require('./routes/chat');
-
 var app = express();
 
 app.set('view engine', 'html');
