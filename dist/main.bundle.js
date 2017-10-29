@@ -155,7 +155,7 @@ var ChatComponent = (function () {
         this.joinned = false;
         this.newUser = { nickname: '', room: '' };
         this.msgData = { room: '', nickname: '', message: '' };
-        this.socket = __WEBPACK_IMPORTED_MODULE_2_socket_io_client__["connect"]('https://chatmeanapp.herokuapp.com:3001');
+        this.socket = __WEBPACK_IMPORTED_MODULE_2_socket_io_client__["connect"]();
     }
     ChatComponent.prototype.ngOnInit = function () {
         var user = JSON.parse(localStorage.getItem("user"));
