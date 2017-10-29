@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { ChatService } from '../chat.service';
+import { DialogService } from "ng2-bootstrap-modal";
 import * as io from "socket.io-client";
+import { RoomaddComponent } from './roomadd.component'
 
 @Component({
   selector: 'app-chat',
@@ -12,17 +14,19 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
   chats: any;
+  rooms: any;
   joinned: boolean = false;
   newUser = { nickname: '', room: '' };
   msgData = { room: '', nickname: '', message: '' };
   socket = io.connect();
 
-  constructor(private chatService: ChatService) { }
+  constructor(private chatService: ChatService, private dialogService: DialogService) { }
 
   ngOnInit() {
     var user = JSON.parse(localStorage.getItem("user"));
+    this.getRooms();
     if (user !== null) {
-      this.getChatByRoom(user.room);
+      this.getChatByRoom(user.room);      
       this.msgData = { room: user.room, nickname: user.nickname, message: '' }
       this.joinned = true;
       this.scrollToBottom();
@@ -72,6 +76,18 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     this.joinned = true;
     this.socket.emit('save-message', { room: this.newUser.room, nickname: this.newUser.nickname, message: 'Join this room', updated_at: date });
   }
+  
+  getRooms() {
+    this.chatService.getRooms().then((res) => {
+      this.rooms = res;
+      console.log(this.rooms);
+    }, (err) => {
+      this.rooms = [];
+      console.log(err);
+    });
+  }
+
+  
 
   sendMessage() {
     this.chatService.saveChat(this.msgData).then((result) => {
@@ -87,6 +103,29 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     this.socket.emit('save-message', { room: user.room, nickname: user.nickname, message: 'Left this room', updated_at: date });
     localStorage.removeItem("user");
     this.joinned = false;
+  }
+
+  showAddRoomDialog() {
+    var body = document.getElementsByTagName("body")[0];
+    body.style.overflow = "hidden";
+    this.dialogService.addDialog(RoomaddComponent, {
+      title: 'Add Room'
+    })
+      .subscribe((tosendRoom: any) => {
+        //We get dialog result
+        var body = document.getElementsByTagName("body")[0];
+        body.style.overflow = "";
+        if (tosendRoom) {
+          console.log(tosendRoom);
+          this.chatService.createRoom(tosendRoom).then((result) => {
+            console.log("New Room has been saved");
+            this.getRooms();
+          }, (err) => {
+            console.log(err);
+          });
+        }
+
+      });
   }
 
 }

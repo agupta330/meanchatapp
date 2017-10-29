@@ -12,6 +12,7 @@ mongoose.connect('mongodb://admin:admin@ds013918.mlab.com:13918/mean-chat')
   .catch((err) => console.error(err));
 
 var chat = require('./routes/chat');
+var room = require('./routes/room');
 var app = express();
 
 app.set('view engine', 'html');
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/chat', chat);
+app.use('/room', room);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -31,6 +33,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
