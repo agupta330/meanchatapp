@@ -1,0 +1,49 @@
+<div class="main">
+    <div class="sidebar">
+
+        <div class="slack-name">
+            <h2>FireSlack</h2>
+        </div>
+
+        <div class="channel-list">
+            <div class="list-head">Channels</div>
+            <div class="channel">
+                <a href="#a" href-active="selected"># A</a>
+                <a href="#b" href-active="selected"># B</a>
+                <a href="#c" href-active="selected"># C</a>
+            </div>
+
+            <div class="channel create">
+                <a href="#create">+ Create Channel</a>
+            </div>
+
+            <!-- <div class="list-head">Direct Messages</div>
+      <div class="channel" ng-repeat="user in channelsCtrl.users">
+        <a ng-if="user.$id !== channelsCtrl.profile.$id" href="channels.direct({uid: user.$id})" href-active="selected">
+          <span class="presence" ng-class="{online: user.online}"></span> {{ user.displayName }}
+        </a>
+      </div> -->
+        </div>
+
+    </div>
+
+    <div class="message-pane">
+        <!-- <ui-view></ui-view> -->
+        <mat-list>
+            <h3 mat-subheader>Folders</h3>
+            <mat-list-item *ngFor="let folder of folders">
+                <mat-icon mat-list-icon>folder</mat-icon>
+                <h4 mat-line>{{folder.name}}</h4>
+                <p mat-line> {{folder.updated | date}} </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <h3 mat-subheader>Notes</h3>
+            <mat-list-item *ngFor="let note of notes">
+                <mat-icon mat-list-icon>note</mat-icon>
+                <h4 mat-line>{{note.name}}</h4>
+                <p mat-line> {{note.updated | date}} </p>
+            </mat-list-item>
+        </mat-list>
+
+    </div>
+</div>
