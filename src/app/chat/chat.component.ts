@@ -6,7 +6,7 @@ import { RoomaddComponent } from './roomadd.component'
 
 @Component({
   selector: 'app-chat',
-  templateUrl: './list.component.html',
+  templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit, AfterViewChecked {

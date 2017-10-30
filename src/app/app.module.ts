@@ -1,3 +1,4 @@
+import { ScrollcontainerComponent } from './scrollcontainer/scrollcontainer.component';
 import { RoomaddComponent } from './chat/roomadd.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -47,14 +48,16 @@ import {
 
 const ROUTES = [
   { path: '', redirectTo: 'chats', pathMatch: 'full' },
-  { path: 'chats', component: ChatComponent }
+  { path: 'chats', component: ChatComponent },
+  { path: 'scroll', component: ScrollcontainerComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    RoomaddComponent
+    RoomaddComponent,
+    ScrollcontainerComponent
   ],
   imports: [
     BrowserModule,
