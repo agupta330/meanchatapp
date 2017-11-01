@@ -1,3 +1,5 @@
+import { SectionComponent } from './section/section.component';
+import { ContainerComponent } from './container/container.component';
 import { ScrollcontainerComponent } from './scrollcontainer/scrollcontainer.component';
 import { RoomaddComponent } from './chat/roomadd.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +14,8 @@ import { ChatService } from './chat.service';
 import { ChatComponent } from './chat/chat.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { CommonModule } from '@angular/common';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -45,6 +49,7 @@ import {
   MatTooltipModule,
   MatStepperModule
 } from '@angular/material';
+import {StickyModule} from 'ng2-sticky-kit';
 
 const ROUTES = [
   { path: '', redirectTo: 'chats', pathMatch: 'full' },
@@ -57,7 +62,9 @@ const ROUTES = [
     AppComponent,
     ChatComponent,
     RoomaddComponent,
-    ScrollcontainerComponent
+    ScrollcontainerComponent,
+    ContainerComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +103,8 @@ const ROUTES = [
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+    StickyModule
   ],
   providers: [
     ChatService,

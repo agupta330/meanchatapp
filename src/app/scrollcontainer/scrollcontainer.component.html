@@ -29,9 +29,17 @@
 
 
 </div> -->
-<div class="message-pane">
+<style>
+    .subheaderdemoBasicUsage .face {
+        border-radius: 30px;
+        border: 1px solid #ddd;
+        width: 48px;
+        margin: 16px;
+    }
+</style>
+<div class="message-pane subheaderdemoBasicUsage" layout="column" flex="" layout-fill="" ng-cloak="" class="">
     <!-- <ui-view></ui-view> -->
-    <mat-list>
+    <!-- <mat-list>
         <h3 mat-subheader>Folders</h3>
         <mat-list-item *ngFor="let folder of folders">
             <mat-icon mat-list-icon>folder</mat-icon>
@@ -44,6 +52,22 @@
             <mat-icon mat-list-icon>note</mat-icon>
             <h4 mat-line>{{note.name}}</h4>
             <p mat-line> {{note.updated | date}} </p>
+        </mat-list-item>
+    </mat-list> -->
+    
+    <mat-list layout-padding="">
+        <sticky [sticky-offset-top]="20"><div>Folders</div></sticky>
+        <mat-list-item *ngFor="let folder of folders">
+            <mat-icon matListIcon>folder</mat-icon>
+            <h4 matLine>{{folder.name}}</h4>
+            <p matLine class="demo-2"> {{folder.updated}} </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <sticky [sticky-offset-top]="20"><div>DEMON</div></sticky>
+        <mat-list-item *ngFor="let note of notes">
+            <mat-icon matListIcon>note</mat-icon>
+            <h4 matLine>{{note.name}}</h4>
+            <p matLine class="demo-2"> {{note.updated}} </p>
         </mat-list-item>
     </mat-list>
 

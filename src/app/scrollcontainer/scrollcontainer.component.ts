@@ -3,16 +3,331 @@ import { ChatService } from '../chat.service';
 import { DialogService } from "ng2-bootstrap-modal";
 import * as io from "socket.io-client";
 import { RoomaddComponent } from './roomadd.component'
+import { ContainerComponent } from '../container/container.component';
 
 @Component({
   selector: 'app-chat',
-  templateUrl: './scrollcontainer.component.html',
-  styleUrls: ['./scrollcontainer.component.css']
+  // templateUrl: './scrollcontainer.component.html',
+  // styleUrls: ['./scrollcontainer.component.css']
+  template: `<container [sections]="sections"></container>`
 })
 export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
-
+  public sections = [
+    {
+      name: "Bird",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
+      messages: [
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        }
+      ]
+    },
+    {
+      name: "Wheel",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_OC_Fair_ferris_wheel.jpg/320px-The_OC_Fair_ferris_wheel.jpg",
+      messages: [
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        }
+      ]
+    },
+    {
+      name: "Horses",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_OC_Fair_ferris_wheel.jpg/320px-The_OC_Fair_ferris_wheel.jpg",
+      messages: [
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        }
+      ]
+    },
+    {
+      name: "Lamp",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_OC_Fair_ferris_wheel.jpg/320px-The_OC_Fair_ferris_wheel.jpg",
+      messages: [
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        }
+      ]
+    }        
+  ];
   chats: any;
   rooms: any;
   joinned: boolean = false;
@@ -26,7 +341,7 @@ export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
     var user = JSON.parse(localStorage.getItem("user"));
     this.getRooms();
     if (user !== null) {
-      this.getChatByRoom(user.room);      
+      this.getChatByRoom(user.room);
       this.msgData = { room: user.room, nickname: user.nickname, message: '' }
       this.joinned = true;
       this.scrollToBottom();
@@ -76,7 +391,7 @@ export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
     this.joinned = true;
     this.socket.emit('save-message', { room: this.newUser.room, nickname: this.newUser.nickname, message: 'Join this room', updated_at: date });
   }
-  
+
   getRooms() {
     this.chatService.getRooms().then((res) => {
       this.rooms = res;
@@ -87,7 +402,7 @@ export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
     });
   }
 
-  
+
 
   sendMessage() {
     this.chatService.saveChat(this.msgData).then((result) => {
@@ -128,108 +443,7 @@ export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
       });
   }
 
-  folders = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-        {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-        {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-        {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-        {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    }        
-  ];
+
   notes = [
     {
       name: 'Vacation Itinerary',
@@ -239,6 +453,6 @@ export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
       name: 'Kitchen Remodel',
       updated: new Date('1/18/16'),
     }
-  ];  
+  ];
 
 }

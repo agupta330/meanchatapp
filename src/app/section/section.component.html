@@ -1,0 +1,12 @@
+<h2>{{content.name}}</h2>
+<mat-divider></mat-divider>
+<!-- <img src="{{content.img}}"/> -->
+<div class="message-pane subheaderdemoBasicUsage" layout="column" flex="" layout-fill="" ng-cloak="" class="">
+<mat-list layout-padding="">
+    <mat-list-item *ngFor="let message of content.messages">
+        <mat-icon matListIcon>folder</mat-icon>
+        <h4 matLine>{{message.name}}</h4>
+        <p matLine class="demo-2"> {{message.updated}} </p>
+    </mat-list-item>
+</mat-list>
+</div>

@@ -1,0 +1,22 @@
+img{
+  height: 320px;} 
+hr{
+   margin-bottom: 21px;
+   border: 0;
+  border-top: 1px solid #434857;
+}
+.subheaderdemoBasicUsage .face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  margin: 16px;
+}
+.message-pane {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 55px 15px 65px 15px;
+  -webkit-overflow-scrolling: touch;
+}
