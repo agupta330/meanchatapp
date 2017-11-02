@@ -1,7 +1,7 @@
-<h2>{{content.name}}</h2>
-<mat-divider></mat-divider>
+<!-- <h2>{{content.name}}</h2> -->
+<!-- <mat-divider></mat-divider> -->
 <!-- <img src="{{content.img}}"/> -->
-<div class="message-pane subheaderdemoBasicUsage" layout="column" flex="" layout-fill="" ng-cloak="" class="">
+<!-- <div class="message-pane subheaderdemoBasicUsage" layout="column" flex="" layout-fill="" ng-cloak="" class="">
 <mat-list layout-padding="">
     <mat-list-item *ngFor="let message of content.messages">
         <mat-icon matListIcon>folder</mat-icon>
@@ -9,4 +9,28 @@
         <p matLine class="demo-2"> {{message.updated}} </p>
     </mat-list-item>
 </mat-list>
+</div> -->
+<hr>
+<span>{{content.name}}</span>
+<div class="message-pane">
+<div class="message-wrap" *ngFor="let message of content.messages">
+  <img class="user-pic" src="{{content.img}}">
+  <div class="message-info">
+    <div class="user-name">
+      {{ message.name }}
+      <span class="timestamp">{{ message.updated | date:'short' }}</span>
+    </div>
+    <div class="message">
+      {{ message.name }}
+    </div>
+  </div>  
+</div>
+<form class="message-form" (click)="sendMessage()">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Type a message...">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Send</button>
+    </span>
+  </div>
+</form>
 </div>

@@ -11,7 +11,7 @@ hr{
   width: 48px;
   margin: 16px;
 }
-.message-pane {
+/* .message-pane {
   display: inline-block;
   vertical-align: top;
   height: 100%;
@@ -19,4 +19,69 @@ hr{
   overflow-y: scroll;
   padding: 55px 15px 65px 15px;
   -webkit-overflow-scrolling: touch;
+} */
+
+.message-pane {
+  display:inline-block;
+  vertical-align: top;
+  height:100%;
+  width:100%;
+  overflow-y:scroll;
+  padding:55px 15px 65px 15px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.message-pane .header {
+  position:fixed;
+  top:0;
+  background:#fff;
+  width:100%;
+  z-index:2;
+}
+
+.message-pane .header h1 {
+  padding:12px 0 10px 0;
+  margin-top:0px;
+  margin-bottom:0px;
+  font-size:24px;
+  color:#555459;
+  font-weight:900;
+}
+
+.message-pane .message-form {
+  position:fixed;
+  bottom:0;
+  padding:0 15px 15px 0;
+  background:#fff;
+  width:100%;
+}
+
+.message-pane .message-wrap {
+  position:relative;
+  margin-top:15px;
+}
+
+.message-pane .message-wrap .user-pic {
+  width:36px;
+  height:36px;
+  border-radius:4px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.message-pane .message-wrap .message-info {
+  display: inline-block;
+  vertical-align: top;
+  padding-left:5px;
+}
+
+.message-pane .message-wrap .message-info .user-name {
+  color:#555459;
+  font-weight:900;
+}
+
+.message-pane .message-wrap .message-info .user-name span{
+  color:#ccc;
+  font-weight: normal;
+  font-size:10px;
 }
