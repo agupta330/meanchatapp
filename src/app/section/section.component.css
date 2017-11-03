@@ -26,8 +26,9 @@ hr{
   vertical-align: top;
   height:100%;
   width:100%;
-  overflow-y:scroll;
-  padding:55px 15px 65px 15px;
+  overflow-y:hidden;
+  overflow-x:hidden;
+  padding:0px 15px 10px 15px;
   -webkit-overflow-scrolling: touch;
 }
 
