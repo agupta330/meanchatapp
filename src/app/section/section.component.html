@@ -13,14 +13,14 @@
 <div class="message-pane">
 <span><b>{{content.name}}</b></span>
 <div class="message-wrap" *ngFor="let message of content.messages">
-  <img class="user-pic" src="{{content.img}}">
+  <img class="user-pic" src="{{message.img}}">
   <div class="message-info">
     <div class="user-name">
-      {{ message.name }}
-      <span class="timestamp">{{ message.updated | date:'short' }}</span>
+      {{ message.messages.nickname }}
+      <span class="timestamp">{{ message.messages.updated_at | date:'short' }}</span>
     </div>
     <div class="message">
-      {{ message.name }}
+      {{ message.messages.message }}
     </div>
   </div>  
 </div>

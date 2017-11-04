@@ -20,7 +20,7 @@ export class ScrollcontainerComponent implements OnInit, AfterViewChecked {
       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
       messages: [
         {
-          name: 'Photos',
+          name: 'Photos asdasd ads <br> asdasdasd adad ',
           updated: new Date('1/1/16'),
         },
         {

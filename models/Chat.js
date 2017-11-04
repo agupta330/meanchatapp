@@ -5,6 +5,7 @@ var ChatSchema = new mongoose.Schema({
   nickname: String,
   message: String,
   updated_at: { type: Date, default: Date.now },
+  date: String
 });
 
 module.exports = mongoose.model('Chat', ChatSchema);

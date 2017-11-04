@@ -2,7 +2,7 @@
       <h2 class="background"><span>{{currentSectionName}}</span></h2>
 </div>
 <ul>
-    <li *ngFor="let section of sections">
+     <li *ngFor="let section of sections"> 
         <section [content]="section" (sectionPosition)="sectionPosition($event)"></section>
-    </li>
+     </li> 
 </ul>

@@ -281,6 +281,320 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ChatComponent = (function () {
+    // public sections = [
+    //   {
+    //     name: "Bird",
+    //     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
+    //     messages: [
+    //       {
+    //         name: 'Photos asdasd ads <br> asdasdasd adad ',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     name: "Wheel",
+    //     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_OC_Fair_ferris_wheel.jpg/320px-The_OC_Fair_ferris_wheel.jpg",
+    //     messages: [
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     name: "Horses",
+    //     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_OC_Fair_ferris_wheel.jpg/320px-The_OC_Fair_ferris_wheel.jpg",
+    //     messages: [
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     name: "Lamp",
+    //     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/The_OC_Fair_ferris_wheel.jpg/320px-The_OC_Fair_ferris_wheel.jpg",
+    //     messages: [
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       },
+    //       {
+    //         name: 'Photos',
+    //         updated: new Date('1/1/16'),
+    //       },
+    //       {
+    //         name: 'Recipes',
+    //         updated: new Date('1/17/16'),
+    //       },
+    //       {
+    //         name: 'Work',
+    //         updated: new Date('1/28/16'),
+    //       }
+    //     ]
+    //   }
+    // ];
     function ChatComponent(chatService, dialogService) {
         this.chatService = chatService;
         this.dialogService = dialogService;
@@ -288,118 +602,7 @@ var ChatComponent = (function () {
         this.newUser = { nickname: '', room: '' };
         this.msgData = { room: '', nickname: '', message: '' };
         this.socket = __WEBPACK_IMPORTED_MODULE_3_socket_io_client__["connect"]();
-        this.folders = [
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            },
-            {
-                name: 'Photos',
-                updated: new Date('1/1/16'),
-            },
-            {
-                name: 'Recipes',
-                updated: new Date('1/17/16'),
-            },
-            {
-                name: 'Work',
-                updated: new Date('1/28/16'),
-            }
-        ];
-        this.notes = [
-            {
-                name: 'Vacation Itinerary',
-                updated: new Date('2/20/16'),
-            },
-            {
-                name: 'Kitchen Remodel',
-                updated: new Date('1/18/16'),
-            }
-        ];
+        this.sections = [];
     }
     ChatComponent.prototype.ngOnInit = function () {
         var user = JSON.parse(localStorage.getItem("user"));
@@ -417,14 +620,36 @@ var ChatComponent = (function () {
             if (roomObj != null && roomObj != undefined) {
                 if (data.message.room === JSON.parse(localStorage.getItem("user")).room) {
                     console.log(this.chats);
+                    var lastKey;
                     if (this.chats != undefined && this.chats != null) {
-                        this.chats.push(data.message);
+                        for (var key in this.chats) {
+                            if (this.chats.hasOwnProperty(key)) {
+                                lastKey = key;
+                            }
+                        }
+                        console.log(lastKey);
+                        this.chats[lastKey].push({ "name": this.ISOToDateFn(data.message.updated_at), "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg", "messages": data.message });
                     }
                     this.msgData = { room: roomObj.room, nickname: roomObj.nickname, message: '' };
                     this.scrollToBottom();
                 }
             }
         }.bind(this));
+    };
+    ChatComponent.prototype.ISOToDateFn = function (date) {
+        date = new Date(date);
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dt = date.getDate();
+        if (dt < 10) {
+            dt = '0' + dt;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+        console.log(dt + '-' + month + '-' + year);
+        var datereturn = dt + '-' + month + '-' + year;
+        return datereturn;
     };
     ChatComponent.prototype.ngAfterViewChecked = function () {
         this.scrollToBottom();
@@ -438,7 +663,17 @@ var ChatComponent = (function () {
     ChatComponent.prototype.getChatByRoom = function (room) {
         var _this = this;
         this.chatService.getChatByRoom(room).then(function (res) {
+            _this.sections = [];
             _this.chats = res;
+            console.log(_this.chats);
+            for (var property in _this.chats) {
+                if (_this.chats.hasOwnProperty(property)) {
+                    console.log(property);
+                    console.log(_this.chats[property]);
+                    _this.sections.push({ "name": property, "messages": _this.chats[property] });
+                }
+            }
+            console.log(_this.sections);
         }, function (err) {
             _this.chats = [];
             console.log(err);
@@ -699,7 +934,7 @@ var ScrollcontainerComponent = (function () {
                 img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
                 messages: [
                     {
-                        name: 'Photos',
+                        name: 'Photos asdasd ads <br> asdasdasd adad ',
                         updated: new Date('1/1/16'),
                     },
                     {
@@ -1241,7 +1476,7 @@ exports = module.exports = __webpack_require__(48)();
 
 
 // module
-exports.push([module.i, ".chat\r\n{\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.chat li\r\n{\r\n    margin-bottom: 10px;\r\n    padding-bottom: 5px;\r\n    border-bottom: 1px dotted #B3A9A9;\r\n}\r\n\r\n.chat li.left .chat-body\r\n{\r\n    margin-left: 60px;\r\n}\r\n\r\n.chat li.right .chat-body\r\n{\r\n    margin-right: 60px;\r\n}\r\n\r\n\r\n.chat li .chat-body p\r\n{\r\n    margin: 0;\r\n    color: #777777;\r\n}\r\n\r\n.panel .slidedown .glyphicon, .chat .glyphicon\r\n{\r\n    margin-right: 5px;\r\n}\r\n\r\n.panel-body\r\n{\r\n    overflow-y: scroll;\r\n    height: 250px;\r\n}\r\n\r\n::-webkit-scrollbar-track\r\n{\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n::-webkit-scrollbar\r\n{\r\n    width: 12px;\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n::-webkit-scrollbar-thumb\r\n{\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);\r\n    background-color: #555;\r\n}", ""]);
+exports.push([module.i, ".chat\r\n{\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.chat li\r\n{\r\n    margin-bottom: 10px;\r\n    padding-bottom: 5px;\r\n    border-bottom: 1px dotted #B3A9A9;\r\n}\r\n\r\n.chat li.left .chat-body\r\n{\r\n    margin-left: 60px;\r\n}\r\n\r\n.chat li.right .chat-body\r\n{\r\n    margin-right: 60px;\r\n}\r\n\r\n\r\n.chat li .chat-body p\r\n{\r\n    margin: 0;\r\n    color: #777777;\r\n}\r\n\r\n.panel .slidedown .glyphicon, .chat .glyphicon\r\n{\r\n    margin-right: 5px;\r\n}\r\n\r\n.panel-body\r\n{\r\n    overflow-y: scroll;\r\n    /* height: 250px; */\r\n}\r\n\r\n::-webkit-scrollbar-track\r\n{\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n::-webkit-scrollbar\r\n{\r\n    width: 12px;\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n::-webkit-scrollbar-thumb\r\n{\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);\r\n    background-color: #555;\r\n}", ""]);
 
 // exports
 
@@ -1297,21 +1532,21 @@ module.exports = "<router-outlet></router-outlet>\r\n"
 /***/ 410:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-5\">\r\n            <div class=\"panel panel-primary\" *ngIf=\"joinned; else joinroom\">\r\n                <div class=\"panel-heading\">\r\n                    <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\r\n                    <div class=\"btn-group pull-right\">\r\n                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"logout()\">\r\n                            Logout\r\n                        </button>\r\n                    </div>\r\n                </div>\r\n                <div #scrollMe class=\"panel-body\">\r\n                    <ul class=\"chat\">\r\n                        <li *ngFor=\"let c of chats\">\r\n                            <div class=\"left clearfix\" *ngIf=\"c.nickname===msgData.nickname; else rightchat\">\r\n                                <span class=\"chat-img pull-left\">\r\n                              <img src=\"http://placehold.it/50/55C1E7/fff&text=ME\" alt=\"User Avatar\" class=\"img-circle\" />\r\n                            </span>\r\n                                <div class=\"chat-body clearfix\">\r\n                                    <div class=\"header\">\r\n                                        <strong class=\"primary-font\">{{ c.nickname }}</strong> <small class=\"pull-right text-muted\">\r\n                                        <span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\r\n                                    </div>\r\n                                    <p>{{ c.message }}</p>\r\n                                </div>\r\n                            </div>\r\n                            <ng-template #rightchat>\r\n                                <div class=\"right clearfix\">\r\n                                    <span class=\"chat-img pull-right\">\r\n                                <img src=\"http://placehold.it/50/FA6F57/fff&text=U\" alt=\"User Avatar\" class=\"img-circle\" />\r\n                              </span>\r\n                                    <div class=\"chat-body clearfix\">\r\n                                        <div class=\"header\">\r\n                                            <small class=\" text-muted\"><span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\r\n                                            <strong class=\"pull-right primary-font\">{{ c.nickname }}</strong>\r\n                                        </div>\r\n                                        <p>{{ c.message }}</p>\r\n                                    </div>\r\n                                </div>\r\n                            </ng-template>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n                <div class=\"panel-footer\">\r\n                    <form (ngSubmit)=\"sendMessage()\" #msgForm=\"ngForm\">\r\n                        <div class=\"input-group\">\r\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.room\" name=\"room\" />\r\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.nickname\" name=\"nickname\" />\r\n                            <input id=\"btn-input\" type=\"text\" [(ngModel)]=\"msgData.message\" name=\"message\" class=\"form-control input-sm\" placeholder=\"Type your message here...\"\r\n                                required=\"\" />\r\n                            <span class=\"input-group-btn\">\r\n                            <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\" [disabled]=\"!msgForm.form.valid\">\r\n                                Send</button>\r\n                        </span>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n            <ng-template #joinroom>\r\n                <div class=\"panel panel-primary\">\r\n                    <div class=\"panel-heading\">\r\n                        <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\r\n                        <div class=\"btn-group pull-right\">\r\n                            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"showAddRoomDialog()\">\r\n                            Create New Room\r\n                        </button>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"panel-body\">\r\n                        <h1>Select Chat Room</h1>\r\n                        <form (ngSubmit)=\"joinRoom()\" #joinForm=\"ngForm\">\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newUser.nickname\" name=\"nickname\" placeholder=\"Nickname\" required=\"\"\r\n                                />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <select class=\"form-control\" [(ngModel)]=\"newUser.room\" name=\"room\" required=\"\">\r\n                        <!-- <option>Select Room</option> -->\r\n                        <option *ngFor='let room of rooms' [value]=\"room.roomname\">\r\n                          {{room.roomname}}\r\n                        </option>\r\n                      </select>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!joinForm.form.valid\">Join</button>\r\n                            </div>\r\n                        </form>\r\n                    </div>\r\n                </div>\r\n            </ng-template>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<container [sections]=\"sections\"  *ngIf=\"joinned; else joinroom\"></container>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n            <div class=\"panel panel-primary\" *ngIf=\"joinned\">\r\n                <div class=\"panel-heading\" >\r\n                    <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\r\n                    <div class=\"btn-group pull-right\">\r\n                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"logout()\">\r\n                            Logout\r\n                        </button>\r\n                    </div>\r\n                </div>\r\n                <!-- <div #scrollMe class=\"panel-body\">\r\n                    <container [sections]=\"sections\"></container>\r\n                     <ul class=\"chat\">\r\n                        <li *ngFor=\"let c of chats\">\r\n                            <div class=\"left clearfix\" *ngIf=\"c.nickname===msgData.nickname; else rightchat\">\r\n                                <span class=\"chat-img pull-left\">\r\n                              <img src=\"http://placehold.it/50/55C1E7/fff&text=ME\" alt=\"User Avatar\" class=\"img-circle\" />\r\n                            </span>\r\n                                <div class=\"chat-body clearfix\">\r\n                                    <div class=\"header\">\r\n                                        <strong class=\"primary-font\">{{ c.nickname }}</strong> <small class=\"pull-right text-muted\">\r\n                                        <span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\r\n                                    </div>\r\n                                    <p>{{ c.message }}</p>\r\n                                </div>\r\n                            </div>\r\n                            <ng-template #rightchat>\r\n                                <div class=\"right clearfix\">\r\n                                    <span class=\"chat-img pull-right\">\r\n                                <img src=\"http://placehold.it/50/FA6F57/fff&text=U\" alt=\"User Avatar\" class=\"img-circle\" />\r\n                              </span>\r\n                                    <div class=\"chat-body clearfix\">\r\n                                        <div class=\"header\">\r\n                                            <small class=\" text-muted\"><span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\r\n                                            <strong class=\"pull-right primary-font\">{{ c.nickname }}</strong>\r\n                                        </div>\r\n                                        <p>{{ c.message }}</p>\r\n                                    </div>\r\n                                </div>\r\n                            </ng-template>\r\n                        </li>\r\n                    </ul> \r\n                </div> -->\r\n                <div class=\"panel-footer\">\r\n                    <form (ngSubmit)=\"sendMessage()\" #msgForm=\"ngForm\">\r\n                        <div class=\"input-group\">\r\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.room\" name=\"room\" />\r\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.nickname\" name=\"nickname\" />\r\n                            <input id=\"btn-input\" type=\"text\" [(ngModel)]=\"msgData.message\" name=\"message\" class=\"form-control input-sm\" placeholder=\"Type your message here...\"\r\n                                required=\"\" />\r\n                            <span class=\"input-group-btn\">\r\n                            <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\" [disabled]=\"!msgForm.form.valid\">\r\n                                Send</button>\r\n                        </span>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n            <ng-template #joinroom>\r\n                <div class=\"panel panel-primary\">\r\n                    <div class=\"panel-heading\">\r\n                        <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\r\n                        <div class=\"btn-group pull-right\">\r\n                            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"showAddRoomDialog()\">\r\n                            Create New Room\r\n                        </button>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"panel-body\">\r\n                        <h1>Select Chat Room</h1>\r\n                        <form (ngSubmit)=\"joinRoom()\" #joinForm=\"ngForm\">\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newUser.nickname\" name=\"nickname\" placeholder=\"Nickname\" required=\"\"\r\n                                />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <select class=\"form-control\" [(ngModel)]=\"newUser.room\" name=\"room\" required=\"\">\r\n                        <!-- <option>Select Room</option> -->\r\n                        <option *ngFor='let room of rooms' [value]=\"room.roomname\">\r\n                          {{room.roomname}}\r\n                        </option>\r\n                      </select>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!joinForm.form.valid\">Join</button>\r\n                            </div>\r\n                        </form>\r\n                    </div>\r\n                </div>\r\n            </ng-template>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
 /***/ 411:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h2 class=\"background\"><span>{{currentSectionName}}</span></h2>\r\n</div>\r\n<ul>\r\n    <li *ngFor=\"let section of sections\">\r\n        <section [content]=\"section\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n    </li>\r\n</ul>"
+module.exports = "<div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h2 class=\"background\"><span>{{currentSectionName}}</span></h2>\r\n</div>\r\n<ul>\r\n     <li *ngFor=\"let section of sections\"> \r\n        <section [content]=\"section\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n     </li> \r\n</ul>"
 
 /***/ }),
 
 /***/ 412:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <h2>{{content.name}}</h2> -->\r\n<!-- <mat-divider></mat-divider> -->\r\n<!-- <img src=\"{{content.img}}\"/> -->\r\n<!-- <div class=\"message-pane subheaderdemoBasicUsage\" layout=\"column\" flex=\"\" layout-fill=\"\" ng-cloak=\"\" class=\"\">\r\n<mat-list layout-padding=\"\">\r\n    <mat-list-item *ngFor=\"let message of content.messages\">\r\n        <mat-icon matListIcon>folder</mat-icon>\r\n        <h4 matLine>{{message.name}}</h4>\r\n        <p matLine class=\"demo-2\"> {{message.updated}} </p>\r\n    </mat-list-item>\r\n</mat-list>\r\n</div> -->\r\n<div class=\"message-pane\">\r\n<span><b>{{content.name}}</b></span>\r\n<div class=\"message-wrap\" *ngFor=\"let message of content.messages\">\r\n  <img class=\"user-pic\" src=\"{{content.img}}\">\r\n  <div class=\"message-info\">\r\n    <div class=\"user-name\">\r\n      {{ message.name }}\r\n      <span class=\"timestamp\">{{ message.updated | date:'short' }}</span>\r\n    </div>\r\n    <div class=\"message\">\r\n      {{ message.name }}\r\n    </div>\r\n  </div>  \r\n</div>\r\n<form class=\"message-form\" (click)=\"sendMessage()\">\r\n  <div class=\"input-group\">\r\n    <input type=\"text\" class=\"form-control\" placeholder=\"Type a message...\">\r\n    <span class=\"input-group-btn\">\r\n      <button class=\"btn btn-default\" type=\"submit\">Send</button>\r\n    </span>\r\n  </div>\r\n</form>\r\n</div>\r\n"
+module.exports = "<!-- <h2>{{content.name}}</h2> -->\r\n<!-- <mat-divider></mat-divider> -->\r\n<!-- <img src=\"{{content.img}}\"/> -->\r\n<!-- <div class=\"message-pane subheaderdemoBasicUsage\" layout=\"column\" flex=\"\" layout-fill=\"\" ng-cloak=\"\" class=\"\">\r\n<mat-list layout-padding=\"\">\r\n    <mat-list-item *ngFor=\"let message of content.messages\">\r\n        <mat-icon matListIcon>folder</mat-icon>\r\n        <h4 matLine>{{message.name}}</h4>\r\n        <p matLine class=\"demo-2\"> {{message.updated}} </p>\r\n    </mat-list-item>\r\n</mat-list>\r\n</div> -->\r\n<div class=\"message-pane\">\r\n<span><b>{{content.name}}</b></span>\r\n<div class=\"message-wrap\" *ngFor=\"let message of content.messages\">\r\n  <img class=\"user-pic\" src=\"{{message.img}}\">\r\n  <div class=\"message-info\">\r\n    <div class=\"user-name\">\r\n      {{ message.messages.nickname }}\r\n      <span class=\"timestamp\">{{ message.messages.updated_at | date:'short' }}</span>\r\n    </div>\r\n    <div class=\"message\">\r\n      {{ message.messages.message }}\r\n    </div>\r\n  </div>  \r\n</div>\r\n<form class=\"message-form\" (click)=\"sendMessage()\">\r\n  <div class=\"input-group\">\r\n    <input type=\"text\" class=\"form-control\" placeholder=\"Type a message...\">\r\n    <span class=\"input-group-btn\">\r\n      <button class=\"btn btn-default\" type=\"submit\">Send</button>\r\n    </span>\r\n  </div>\r\n</form>\r\n</div>\r\n"
 
 /***/ }),
 

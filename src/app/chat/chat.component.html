@@ -1,8 +1,9 @@
+<container [sections]="sections"  *ngIf="joinned; else joinroom"></container>
 <div class="container">
     <div class="row">
-        <div class="col-md-5">
-            <div class="panel panel-primary" *ngIf="joinned; else joinroom">
-                <div class="panel-heading">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-primary" *ngIf="joinned">
+                <div class="panel-heading" >
                     <span class="glyphicon glyphicon-comment"></span> {{ msgData.room }}
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default btn-xs" (click)="logout()">
@@ -10,8 +11,9 @@
                         </button>
                     </div>
                 </div>
-                <div #scrollMe class="panel-body">
-                    <ul class="chat">
+                <!-- <div #scrollMe class="panel-body">
+                    <container [sections]="sections"></container>
+                     <ul class="chat">
                         <li *ngFor="let c of chats">
                             <div class="left clearfix" *ngIf="c.nickname===msgData.nickname; else rightchat">
                                 <span class="chat-img pull-left">
@@ -40,8 +42,8 @@
                                 </div>
                             </ng-template>
                         </li>
-                    </ul>
-                </div>
+                    </ul> 
+                </div> -->
                 <div class="panel-footer">
                     <form (ngSubmit)="sendMessage()" #msgForm="ngForm">
                         <div class="input-group">
