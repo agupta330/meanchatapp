@@ -18,6 +18,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   joinned: boolean = false;
   newUser = { nickname: '', room: '' };
   msgData = { room: '', nickname: '', message: '' };
+  message:string="";
   socket = io.connect();
   public sections: any = [];
   // public sections = [

@@ -1,0 +1,91 @@
+#slack-message-input {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      padding-left: 220px;
+      z-index: 99;
+      background: white;
+      div {
+        position: relative;
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 0 4px 0 25px;
+        a#up-arrow {
+          z-index: 99;
+          height: 41px;
+          position: absolute;
+          bottom: 22px;
+          left: 20px;
+          background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#efefef),color-stop(1,#fff));
+          background: -ms-linear-gradient(bottom,#efefef,#fff);
+          background: -moz-linear-gradient(center bottom,#efefef 0,#fff 100%);
+          background: -o-linear-gradient(#fff,#efefef);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#efefef',GradientType=0);
+          color: #b8b9c0;
+          width: 44px;
+          line-height: 36px;
+          padding: 0 .5rem;
+          border: 2px solid #e0e0e0;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: .2rem;
+          border-top-left-radius: .2rem;
+          text-align: center;
+          font-size: 1.5rem;
+          i.fa {
+            color: #b8b9c0;
+            text-shadow: 0 1px 1px white;
+            cursor: pointer;
+          }
+          &:hover {
+            background: #eb4d5c;
+            border-color: #eb4d5c;
+            color: white;
+            i.fa {
+              color: white;
+              text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+            }
+            text-decoration: none;
+          }
+        }
+        form {
+          z-index: 98;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding-top: 1px;
+          padding-left: 39px;
+          padding-right: 16px;
+          input {
+            padding: 9px 30px 9px 8px;
+            background: white;
+            width: 100%;
+            font-size: .95rem;
+            line-height: 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-left: 0;
+            -moz-border-radius-topright: .2rem;
+            -moz-border-radius-bottomright: .2rem;
+            -moz-border-radius-bottomleft: 0;
+            -moz-border-radius-topleft: 0;
+            border-top-right-radius: .2rem;
+            border-bottom-right-radius: .2rem;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            margin: 0;
+            color: #3d3c40;
+            &:focus, &:active {
+              -webkit-box-shadow: none;
+              -moz-box-shadow: none;
+              box-shadow: none;
+              outline: none;
+              outline-width: 0;
+            }
+          }
+        }
+      }
+    }

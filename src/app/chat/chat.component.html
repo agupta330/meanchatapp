@@ -1,16 +1,36 @@
-<container [sections]="sections"  *ngIf="joinned; else joinroom"></container>
+<container [sections]="sections" *ngIf="joinned; else joinroom"></container>
+<!-- <div class="input-group" *ngIf="joinned" style="padding-left:5px;padding-right:5px;">
+    <span class="input-group-btn" style="padding-right:2px;">
+        <button class="btn btn-warning btn-sm" id="btn-chat">
+          +
+        </button>
+    </span>
+    <div contenteditable="true" placeholder="Enter text here..." style="padding-right:2px;"></div>
+    <span class="input-group-btn">
+        <button class="btn btn-warning btn-sm" id="btn-chat">
+            Send
+        </button>
+    </span>
+</div>
+<br> -->
+<!-- <button type="button" class="btn btn-default btn-xs" (click)="logout()">
+   Logout
+</button> -->
+<form (ngSubmit)="sendMessage()" #msgForm="ngForm" *ngIf="joinned" (keyup.enter)="sendMessage()">
+<msg-app [(cdMsg)] ="msgData.message" [(joinnedMsg)]="joinned"> </msg-app> 
+</form>
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="panel panel-primary" *ngIf="joinned">
-                <div class="panel-heading" >
+            <!-- <div class="panel panel-primary" *ngIf="joinned"> -->
+                <!-- <div class="panel-heading">
                     <span class="glyphicon glyphicon-comment"></span> {{ msgData.room }}
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default btn-xs" (click)="logout()">
                             Logout
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div #scrollMe class="panel-body">
                     <container [sections]="sections"></container>
                      <ul class="chat">
@@ -44,7 +64,7 @@
                         </li>
                     </ul> 
                 </div> -->
-                <div class="panel-footer">
+                <!-- <div class="panel-footer">
                     <form (ngSubmit)="sendMessage()" #msgForm="ngForm">
                         <div class="input-group">
                             <input type="hidden" [(ngModel)]="msgData.room" name="room" />
@@ -57,8 +77,9 @@
                         </span>
                         </div>
                     </form>
-                </div>
-            </div>
+                </div> -->
+
+            <!-- </div> -->
             <ng-template #joinroom>
                 <div class="panel panel-primary">
                     <div class="panel-heading">

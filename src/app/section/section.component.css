@@ -86,3 +86,59 @@ hr{
   font-weight: normal;
   font-size:10px;
 }
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}
+
+/* */
+
+div[contenteditable=true] {
+  border: 1px solid #AAA;
+  width: 100%;
+  padding: 5px;
+}
+
+pre {
+  background:#EEE;
+  padding:5px;
+  width: 290px;
+}
+
+.container_186vsl5 {
+    flex: 1 !important;
+    padding: 10px 10px 0 10px !important;
+    background: #fff !important;
+    overflow-y: auto !important;
+    -webkit-flex: 1 !important;
+    -ms-flex: 1 !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dayDivider_1yqkpak {
+    position: relative !important;
+    margin: 1rem 0 !important;
+    text-align: center !important;
+}
+
+.dayText_zrlbv3 {
+    z-index: 1 !important;
+    position: relative !important;
+    background: #fff !important;
+    padding: 0 12px !important;
+}
+
+.dayDivider_1yqkpak::after {
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    left: 0 !important;
+    height: 1px !important;
+    background: rgb(240,240,240) !important;
+    content: "" !important;
+}
+
+div {
+    box-sizing: content-box;
+}

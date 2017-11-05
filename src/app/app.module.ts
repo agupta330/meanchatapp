@@ -1,3 +1,4 @@
+import { MessageContainerComponent } from './messagecontainer/messagecontainer.component';
 import { SectionComponent } from './section/section.component';
 import { ContainerComponent } from './container/container.component';
 import { ScrollcontainerComponent } from './scrollcontainer/scrollcontainer.component';
@@ -64,7 +65,8 @@ const ROUTES = [
     RoomaddComponent,
     ScrollcontainerComponent,
     ContainerComponent,
-    SectionComponent
+    SectionComponent,
+    MessageContainerComponent
   ],
   imports: [
     BrowserModule,
