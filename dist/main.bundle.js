@@ -7,7 +7,7 @@ webpackJsonp([1,4],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomaddComponent; });
@@ -150,7 +150,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__chat_service__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__chat_service__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__chat_chat_component__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_material__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_sticky_kit__ = __webpack_require__(408);
@@ -262,7 +262,7 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(142);
@@ -910,7 +910,7 @@ MessageContainerComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomaddComponent; });
@@ -974,7 +974,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(142);
@@ -1452,6 +1452,7 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(70);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SectionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1463,9 +1464,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SectionComponent = (function () {
-    function SectionComponent(element) {
+    function SectionComponent(element, chatService) {
         this.element = element;
+        this.chatService = chatService;
         this.sectionPosition = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     SectionComponent.prototype.ngOnInit = function () {
@@ -1473,6 +1476,33 @@ var SectionComponent = (function () {
     };
     SectionComponent.prototype.onResize = function (event) {
         this.sectionPosition.emit({ name: this.content.name, position: this.element.nativeElement.offsetTop });
+    };
+    SectionComponent.prototype.copyTextToClipboard = function (text) {
+        var textArea = document.createElement("textarea");
+        // Place in top-left corner of screen regardless of scroll position.
+        textArea.style.position = 'fixed';
+        // Ensure it has a small width and height. Setting to 1px / 1em
+        // doesn't work as this gives a negative w/h on some browsers.
+        textArea.style.width = '2em';
+        textArea.style.height = '2em';
+        // Clean up any borders.
+        textArea.style.border = 'none';
+        textArea.style.outline = 'none';
+        textArea.style.boxShadow = 'none';
+        // Avoid flash of white box if rendered for any reason.
+        textArea.style.background = 'transparent';
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copying text command was ' + msg);
+        }
+        catch (err) {
+            console.log('Oops, unable to copy');
+        }
+        document.body.removeChild(textArea);
     };
     return SectionComponent;
 }());
@@ -1496,10 +1526,10 @@ SectionComponent = __decorate([
         template: __webpack_require__(415),
         styles: [__webpack_require__(401)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__chat_service__["a" /* ChatService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__chat_service__["a" /* ChatService */]) === "function" && _b || Object])
 ], SectionComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=section.component.js.map
 
 /***/ }),
@@ -1601,7 +1631,7 @@ exports = module.exports = __webpack_require__(45)();
 
 
 // module
-exports.push([module.i, "img{\r\n  height: 320px;} \r\nhr{\r\n   margin-bottom: 21px;\r\n   border: 0;\r\n  border-top: 1px solid #434857;\r\n}\r\n.subheaderdemoBasicUsage .face {\r\n  border-radius: 30px;\r\n  border: 1px solid #ddd;\r\n  width: 48px;\r\n  margin: 16px;\r\n}\r\n/* .message-pane {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  height: 100%;\r\n  width: 100%;\r\n  overflow-y: scroll;\r\n  padding: 55px 15px 65px 15px;\r\n  -webkit-overflow-scrolling: touch;\r\n} */\r\n\r\n.message-pane {\r\n  display:inline-block;\r\n  vertical-align: top;\r\n  height:100%;\r\n  width:100%;\r\n  overflow-y:hidden;\r\n  overflow-x:hidden;\r\n  padding:0px 15px 10px 15px;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n\r\n.message-pane .header {\r\n  position:fixed;\r\n  top:0;\r\n  background:#fff;\r\n  width:100%;\r\n  z-index:2;\r\n}\r\n\r\n.message-pane .header h1 {\r\n  padding:12px 0 10px 0;\r\n  margin-top:0px;\r\n  margin-bottom:0px;\r\n  font-size:24px;\r\n  color:#555459;\r\n  font-weight:900;\r\n}\r\n\r\n.message-pane .message-form {\r\n  position:fixed;\r\n  bottom:0;\r\n  padding:0 15px 15px 0;\r\n  background:#fff;\r\n  width:100%;\r\n}\r\n\r\n.message-pane .message-wrap {\r\n  position:relative;\r\n  margin-top:15px;\r\n}\r\n\r\n.message-pane .message-wrap .user-pic {\r\n  width:36px;\r\n  height:36px;\r\n  border-radius:4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.message-pane .message-wrap .message-info {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  padding-left:5px;\r\n}\r\n\r\n.message-pane .message-wrap .message-info .user-name {\r\n  color:#555459;\r\n  font-weight:900;\r\n}\r\n\r\n.message-pane .message-wrap .message-info .user-name span{\r\n  color:#ccc;\r\n  font-weight: normal;\r\n  font-size:10px;\r\n}\r\n\r\n[contenteditable=true]:empty:before{\r\n  content: attr(placeholder);\r\n  display: block; /* For Firefox */\r\n}\r\n\r\n/* */\r\n\r\ndiv[contenteditable=true] {\r\n  border: 1px solid #AAA;\r\n  width: 100%;\r\n  padding: 5px;\r\n}\r\n\r\npre {\r\n  background:#EEE;\r\n  padding:5px;\r\n  width: 290px;\r\n}\r\n\r\n.container_186vsl5 {\r\n    -webkit-box-flex: 1 !important;\r\n            flex: 1 !important;\r\n    padding: 10px 10px 0 10px !important;\r\n    background: #fff !important;\r\n    overflow-y: auto !important;\r\n    -webkit-flex: 1 !important;\r\n    -ms-flex: 1 !important;\r\n    -webkit-overflow-scrolling: touch;\r\n}\r\n\r\n.dayDivider_1yqkpak {\r\n    position: relative !important;\r\n    margin: 1rem 0 !important;\r\n    text-align: center !important;\r\n}\r\n\r\n.dayText_zrlbv3 {\r\n    z-index: 1 !important;\r\n    position: relative !important;\r\n    background: #fff !important;\r\n    padding: 0 12px !important;\r\n}\r\n\r\n.dayDivider_1yqkpak::after {\r\n    position: absolute !important;\r\n    top: 50% !important;\r\n    right: 0 !important;\r\n    left: 0 !important;\r\n    height: 1px !important;\r\n    background: rgb(240,240,240) !important;\r\n    content: \"\" !important;\r\n}\r\n\r\n/* div,* {\r\n    box-sizing: none;\r\n} */", ""]);
+exports.push([module.i, "img{\r\n  height: 320px;} \r\nhr{\r\n   margin-bottom: 21px;\r\n   border: 0;\r\n  border-top: 1px solid #434857;\r\n}\r\n.subheaderdemoBasicUsage .face {\r\n  border-radius: 30px;\r\n  border: 1px solid #ddd;\r\n  width: 48px;\r\n  margin: 16px;\r\n}\r\n/* .message-pane {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  height: 100%;\r\n  width: 100%;\r\n  overflow-y: scroll;\r\n  padding: 55px 15px 65px 15px;\r\n  -webkit-overflow-scrolling: touch;\r\n} */\r\n\r\n.message-pane {\r\n  display:inline-block;\r\n  vertical-align: top;\r\n  height:100%;\r\n  width:100%;\r\n  overflow-y:hidden;\r\n  overflow-x:hidden;\r\n  padding:0px 15px 10px 15px;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n\r\n.message-pane .header {\r\n  position:fixed;\r\n  top:0;\r\n  background:#fff;\r\n  width:100%;\r\n  z-index:2;\r\n}\r\n\r\n.message-pane .header h1 {\r\n  padding:12px 0 10px 0;\r\n  margin-top:0px;\r\n  margin-bottom:0px;\r\n  font-size:24px;\r\n  color:#555459;\r\n  font-weight:900;\r\n}\r\n\r\n.message-pane .message-form {\r\n  position:fixed;\r\n  bottom:0;\r\n  padding:0 15px 15px 0;\r\n  background:#fff;\r\n  width:100%;\r\n}\r\n\r\n.message-pane .message-wrap {\r\n  position:relative;\r\n  margin-top:15px;\r\n}\r\n\r\n.message-pane .message-wrap .user-pic {\r\n  width:36px;\r\n  height:36px;\r\n  border-radius:4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.message-pane .message-wrap .message-info {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  padding-left:5px;\r\n}\r\n\r\n.message-pane .message-wrap .message-info .user-name {\r\n  color:#555459;\r\n  font-weight:900;\r\n}\r\n\r\n.message-pane .message-wrap .message-info .user-name span{\r\n  color:#ccc;\r\n  font-weight: normal;\r\n  font-size:10px;\r\n}\r\n\r\n[contenteditable=true]:empty:before{\r\n  content: attr(placeholder);\r\n  display: block; /* For Firefox */\r\n}\r\n\r\n/* */\r\n\r\ndiv[contenteditable=true] {\r\n  border: 1px solid #AAA;\r\n  width: 100%;\r\n  padding: 5px;\r\n}\r\n\r\npre {\r\n  background:#EEE;\r\n  padding:5px;\r\n  width: 290px;\r\n}\r\n\r\n.container_186vsl5 {\r\n    -webkit-box-flex: 1 !important;\r\n            flex: 1 !important;\r\n    padding: 10px 10px 0 10px !important;\r\n    background: #fff !important;\r\n    overflow-y: auto !important;\r\n    -webkit-flex: 1 !important;\r\n    -ms-flex: 1 !important;\r\n    -webkit-overflow-scrolling: touch;\r\n}\r\n\r\n.dayDivider_1yqkpak {\r\n    position: relative !important;\r\n    margin: 1rem 0 !important;\r\n    text-align: center !important;\r\n}\r\n\r\n.dayText_zrlbv3 {\r\n    z-index: 1 !important;\r\n    position: relative !important;\r\n    background: #fff !important;\r\n    padding: 0 12px !important;\r\n}\r\n\r\n.dayDivider_1yqkpak::after {\r\n    position: absolute !important;\r\n    top: 50% !important;\r\n    right: 0 !important;\r\n    left: 0 !important;\r\n    height: 1px !important;\r\n    background: rgb(240,240,240) !important;\r\n    content: \"\" !important;\r\n}\r\n\r\n/* div,* {\r\n    box-sizing: none;\r\n} */\r\n#iddisplay{\r\n display: -webkit-flex; margin-bottom: 10px;\r\n}\r\n.divbutton mat-icon {\r\n    display: none;\r\n    float:right\r\n}\r\n\r\n.divbutton:hover mat-icon {\r\n    display: block;\r\n}", ""]);
 
 // exports
 
@@ -1642,7 +1672,7 @@ module.exports = "<div class=\"input-group\" style=\"padding-left:5px;padding-ri
 /***/ 415:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <h2>{{content.name}}</h2> -->\r\n<!-- <mat-divider></mat-divider> -->\r\n<!-- <img src=\"{{content.img}}\"/> -->\r\n<!-- <div class=\"message-pane subheaderdemoBasicUsage\" layout=\"column\" flex=\"\" layout-fill=\"\" ng-cloak=\"\" class=\"\">\r\n<mat-list layout-padding=\"\">\r\n    <mat-list-item *ngFor=\"let message of content.messages\">\r\n        <mat-icon matListIcon>folder</mat-icon>\r\n        <h4 matLine>{{message.name}}</h4>\r\n        <p matLine class=\"demo-2\"> {{message.updated}} </p>\r\n    </mat-list-item>\r\n</mat-list>\r\n</div> -->\r\n<!-- <div class=\"message-pane\">\r\n  <span><b>{{content.name}}</b></span>\r\n  <div class=\"message-wrap\" *ngFor=\"let message of content.messages\">\r\n    <img class=\"user-pic\" src=\"{{message.img}}\">\r\n    <div class=\"message-info\">\r\n      <div class=\"user-name\">\r\n        {{ message.messages.nickname }}\r\n        <span class=\"timestamp\">{{ message.messages.updated_at | date:'short' }}</span>\r\n      </div>\r\n      <div>\r\n        {{ message.messages.message }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n<div class=\"container_186vsl5\">\r\n  <div>\r\n    <div class=\"dayDivider_1yqkpak\">\r\n      <span class=\"dayText_zrlbv3\">\r\n        <span><b>{{content.name}}</b></span>\r\n      </span>\r\n    </div>\r\n    <div style=\"display: flex; margin-bottom: 10px;\" *ngFor=\"let message of content.messages\">\r\n      <img src=\"{{message.img}}\" style=\"width: 40px; height: 40px; border-radius: 4px; margin-right: 10px;\">\r\n      <div>\r\n        <div style=\"line-height: 1.2;\">\r\n          <b style=\"margin-right: 8px; font-size: 14px;\">\r\n             {{ message.messages.nickname }}\r\n          </b>\r\n          <time style=\"font-size: 12px; color: rgb(192, 192, 192);\">\r\n            {{ message.messages.updated_at | date:'shortTime' }}\r\n          </time>\r\n        </div>\r\n        <div>\r\n          {{ message.messages.message }}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- <div id=\"msg_input\" class=\"ql-container\"><div class=\"ql-editor ql-blank\" contenteditable=\"true\" tabindex=\"1\" role=\"textbox\" aria-multiline=\"true\" aria-haspopup=\"true\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\" aria-label=\"Message @Priyansh Dwivedi\"><p><br></p></div><div class=\"ql-clipboard\" contenteditable=\"true\" tabindex=\"-1\" aria-hidden=\"true\" role=\"presentation\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\"></div><div class=\"ql-placeholder\" aria-hidden=\"true\" role=\"presentation\" tabindex=\"-1\">Message @Priyansh Dwivedi</div></div> -->"
+module.exports = "<!-- <h2>{{content.name}}</h2> -->\r\n<!-- <mat-divider></mat-divider> -->\r\n<!-- <img src=\"{{content.img}}\"/> -->\r\n<!-- <div class=\"message-pane subheaderdemoBasicUsage\" layout=\"column\" flex=\"\" layout-fill=\"\" ng-cloak=\"\" class=\"\">\r\n<mat-list layout-padding=\"\">\r\n    <mat-list-item *ngFor=\"let message of content.messages\">\r\n        <mat-icon matListIcon>folder</mat-icon>\r\n        <h4 matLine>{{message.name}}</h4>\r\n        <p matLine class=\"demo-2\"> {{message.updated}} </p>\r\n    </mat-list-item>\r\n</mat-list>\r\n</div> -->\r\n<!-- <div class=\"message-pane\">\r\n  <span><b>{{content.name}}</b></span>\r\n  <div class=\"message-wrap\" *ngFor=\"let message of content.messages\">\r\n    <img class=\"user-pic\" src=\"{{message.img}}\">\r\n    <div class=\"message-info\">\r\n      <div class=\"user-name\">\r\n        {{ message.messages.nickname }}\r\n        <span class=\"timestamp\">{{ message.messages.updated_at | date:'short' }}</span>\r\n      </div>\r\n      <div>\r\n        {{ message.messages.message }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n<div class=\"container_186vsl5\">\r\n  <div>\r\n    <div class=\"dayDivider_1yqkpak\">\r\n      <span class=\"dayText_zrlbv3\">\r\n        <span><b>{{content.name}}</b></span>\r\n      </span>\r\n    </div>\r\n    <div id=\"iddisplay\" *ngFor=\"let message of content.messages\">\r\n      <img src=\"{{message.img}}\" style=\"width: 40px; height: 40px; border-radius: 4px; margin-right: 10px;\">\r\n      <div class=\"divbutton\">\r\n        <div>\r\n          <b style=\"margin-right: 8px; font-size: 14px;\">\r\n             {{ message.messages.nickname }}\r\n          </b>\r\n          <time style=\"margin-right: 12px;font-size: 12px; color: rgb(192, 192, 192);\">\r\n            {{ message.messages.updated_at | date:'shortTime' }}\r\n          </time>\r\n          <mat-icon title=\"Add Reaction\" style=\"cursor:pointer\">face</mat-icon>\r\n          <mat-icon title=\"Copy Message\" style=\"cursor:pointer\" (click)=\"copyTextToClipboard(message.messages.message)\">assignment</mat-icon>\r\n        </div>\r\n        <div style=\"display: -webkit-flex;width:100%\" >\r\n          {{ message.messages.message }}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- <div id=\"msg_input\" class=\"ql-container\"><div class=\"ql-editor ql-blank\" contenteditable=\"true\" tabindex=\"1\" role=\"textbox\" aria-multiline=\"true\" aria-haspopup=\"true\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\" aria-label=\"Message @Priyansh Dwivedi\"><p><br></p></div><div class=\"ql-clipboard\" contenteditable=\"true\" tabindex=\"-1\" aria-hidden=\"true\" role=\"presentation\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\"></div><div class=\"ql-placeholder\" aria-hidden=\"true\" role=\"presentation\" tabindex=\"-1\">Message @Priyansh Dwivedi</div></div> -->"
 
 /***/ }),
 
@@ -1661,13 +1691,13 @@ module.exports = __webpack_require__(290);
 
 /***/ }),
 
-/***/ 95:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

@@ -142,3 +142,14 @@ pre {
 /* div,* {
     box-sizing: none;
 } */
+#iddisplay{
+ display: -webkit-flex; margin-bottom: 10px;
+}
+.divbutton mat-icon {
+    display: none;
+    float:right
+}
+
+.divbutton:hover mat-icon {
+    display: block;
+}

@@ -32,18 +32,20 @@
         <span><b>{{content.name}}</b></span>
       </span>
     </div>
-    <div style="display: flex; margin-bottom: 10px;" *ngFor="let message of content.messages">
+    <div id="iddisplay" *ngFor="let message of content.messages">
       <img src="{{message.img}}" style="width: 40px; height: 40px; border-radius: 4px; margin-right: 10px;">
-      <div>
-        <div style="line-height: 1.2;">
+      <div class="divbutton">
+        <div>
           <b style="margin-right: 8px; font-size: 14px;">
              {{ message.messages.nickname }}
           </b>
-          <time style="font-size: 12px; color: rgb(192, 192, 192);">
+          <time style="margin-right: 12px;font-size: 12px; color: rgb(192, 192, 192);">
             {{ message.messages.updated_at | date:'shortTime' }}
           </time>
+          <mat-icon title="Add Reaction" style="cursor:pointer">face</mat-icon>
+          <mat-icon title="Copy Message" style="cursor:pointer" (click)="copyTextToClipboard(message.messages.message)">assignment</mat-icon>
         </div>
-        <div>
+        <div style="display: -webkit-flex;width:100%" >
           {{ message.messages.message }}
         </div>
       </div>
