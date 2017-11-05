@@ -139,6 +139,6 @@ pre {
     content: "" !important;
 }
 
-div {
-    box-sizing: content-box;
-}
+/* div,* {
+    box-sizing: none;
+} */
