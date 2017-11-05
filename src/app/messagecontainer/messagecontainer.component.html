@@ -4,8 +4,8 @@
           Logout
         </button>
     </span>
-    <div contenteditable="true" placeholder="Enter text here..." [textContent]="cdMsg" (input)="update($event.target.textContent)" style="padding-right:5px;"></div>
-    <span class="input-group-btn">
+    <div style="width:90%" contenteditable="true" placeholder="Enter text here..." [textContent]="cdMsg" (input)="update($event.target.textContent)" ></div>
+    <span class="input-group-btn" style="padding-left:5px;">
         <button class="btn btn-warning btn-sm" id="btn-chat">
             Send
         </button>
