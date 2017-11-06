@@ -1,112 +1,53 @@
-webpackJsonp([1,4],{
+webpackJsonp(["main"],{
 
-/***/ 148:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(51);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomaddComponent; });
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var RoomaddComponent = (function (_super) {
-    __extends(RoomaddComponent, _super);
-    function RoomaddComponent(http, dialogService) {
-        var _this = _super.call(this, dialogService) || this;
-        _this.http = http;
-        _this.RoomData = {};
-        return _this;
-    }
-    RoomaddComponent.prototype.apply = function () {
-        this.result = this.RoomData;
-        this.close();
-    };
-    RoomaddComponent.prototype.closeBox = function () {
-        var body = document.getElementsByTagName("body")[0];
-        body.style.overflow = "";
-        this.close();
-    };
-    return RoomaddComponent;
-}(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogComponent"]));
-RoomaddComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'prompt',
-        template: "<div class=\"modal-dialog\">\n                <div class=\"modal-content\">\n                   <div class=\"modal-header\">\n                     <h4 class=\"modal-title\">{{title || 'Prompt'}}</h4>\n                     <button type=\"button\" class=\"close\" (click)=\"close()\">&times;</button>\n                   </div>\n                   <div class=\"modal-body\">\n\n                <form role=\"form\">\n                  <div class=\"form-group\">\n                    <label for=\"roomname\">Room Name</label>\n                      <input type=\"text\" class=\"form-control\"\n                      id=\"roomname\"  name=\"roomname\" [(ngModel)]=\"RoomData.roomname\"/>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"roomdesc\">Room Description</label>\n                      <input type=\"text\" class=\"form-control\"\n                      id=\"roomdesc\" name=\"roomdesc\" [(ngModel)]=\"RoomData.roomdesc\"/>\n                  </div>                 \n                </form>\n                    \n                   </div>\n                   <div class=\"modal-footer\">\n                     <button type=\"button\" class=\"btn btn-primary\" (click)=\"apply()\">OK</button>\n                     <button type=\"button\" class=\"btn btn-default\" (click)=\"closeBox()\" >Cancel</button>\n                   </div>\n                 </div>\n                </div>"
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"]) === "function" && _b || Object])
-], RoomaddComponent);
-
-var _a, _b;
-//# sourceMappingURL=roomadd.component.js.map
-
-/***/ }),
-
-/***/ 289:
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 289;
-
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
-/***/ 290:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "../../../../../src/app/app.component.css":
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(330);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
 
 
+// module
+exports.push([module.i, "", ""]);
+
+// exports
 
 
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
-}
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 322:
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<router-outlet></router-outlet>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,10 +62,10 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(411),
-        styles: [__webpack_require__(397)]
+        template: __webpack_require__("../../../../../src/app/app.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     })
 ], AppComponent);
 
@@ -132,29 +73,29 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 323:
+/***/ "../../../../../src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__messagecontainer_messagecontainer_component__ = __webpack_require__(326);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__section_section_component__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__container_container_component__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scrollcontainer_scrollcontainer_component__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chat_roomadd_component__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__chat_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__chat_chat_component__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_material__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_sticky_kit__ = __webpack_require__(408);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__messagecontainer_messagecontainer_component__ = __webpack_require__("../../../../../src/app/messagecontainer/messagecontainer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__section_section_component__ = __webpack_require__("../../../../../src/app/section/section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__container_container_component__ = __webpack_require__("../../../../../src/app/container/container.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scrollcontainer_scrollcontainer_component__ = __webpack_require__("../../../../../src/app/scrollcontainer/scrollcontainer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chat_roomadd_component__ = __webpack_require__("../../../../../src/app/chat/roomadd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__chat_service__ = __webpack_require__("../../../../../src/app/chat.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__chat_chat_component__ = __webpack_require__("../../../../../src/app/chat/chat.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_sticky_kit__ = __webpack_require__("../../../../ng2-sticky-kit/ng2-sticky-kit.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -191,7 +132,7 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["NgModule"])({
+    Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["NgModule"])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_14__chat_chat_component__["a" /* ChatComponent */],
@@ -203,8 +144,8 @@ AppModule = __decorate([
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_8__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_9__angular_router__["a" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_11_ng2_bootstrap_modal__["BootstrapModalModule"],
             __WEBPACK_IMPORTED_MODULE_10__angular_common__["CommonModule"],
@@ -230,15 +171,15 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__angular_material__["t" /* MatRippleModule */],
             __WEBPACK_IMPORTED_MODULE_15__angular_material__["u" /* MatSelectModule */],
             __WEBPACK_IMPORTED_MODULE_15__angular_material__["v" /* MatSidenavModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["w" /* MatSliderModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["x" /* MatSlideToggleModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["x" /* MatSliderModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["w" /* MatSlideToggleModule */],
             __WEBPACK_IMPORTED_MODULE_15__angular_material__["y" /* MatSnackBarModule */],
             __WEBPACK_IMPORTED_MODULE_15__angular_material__["z" /* MatSortModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["A" /* MatTableModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["B" /* MatTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["C" /* MatToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["D" /* MatTooltipModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_material__["E" /* MatStepperModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["B" /* MatTableModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["C" /* MatTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["D" /* MatToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["E" /* MatTooltipModule */],
+            __WEBPACK_IMPORTED_MODULE_15__angular_material__["A" /* MatStepperModule */],
             __WEBPACK_IMPORTED_MODULE_16_ng2_sticky_kit__["a" /* StickyModule */]
         ],
         providers: [
@@ -257,18 +198,165 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 324:
+/***/ "../../../../../src/app/chat.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__roomadd_component__ = __webpack_require__(148);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ChatService = (function () {
+    function ChatService(http) {
+        this.http = http;
+    }
+    ChatService.prototype.getRooms = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.get('/room')
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.createRoom = function (data) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.post('/room', data)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.getChatByRoom = function (room) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.get('/chat/' + room)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.showChat = function (id) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.get('/chat/' + id)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.saveChat = function (data) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.post('/chat', data)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.updateChat = function (id, data) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.put('/chat/' + id, data)
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.deleteChat = function (id) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.delete('/chat/' + id)
+                .subscribe(function (res) {
+                resolve(res);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    ChatService.prototype.handleError = function (error) {
+        return Promise.reject(error.message || error);
+    };
+    return ChatService;
+}());
+ChatService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
+], ChatService);
+
+var _a;
+//# sourceMappingURL=chat.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat/chat.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".chat\n{\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\n.chat li\n{\n    margin-bottom: 10px;\n    padding-bottom: 5px;\n    border-bottom: 1px dotted #B3A9A9;\n}\n\n.chat li.left .chat-body\n{\n    margin-left: 60px;\n}\n\n.chat li.right .chat-body\n{\n    margin-right: 60px;\n}\n\n\n.chat li .chat-body p\n{\n    margin: 0;\n    color: #777777;\n}\n\n.panel .slidedown .glyphicon, .chat .glyphicon\n{\n    margin-right: 5px;\n}\n\n.panel-body\n{\n    overflow-y: scroll;\n    /* height: 250px; */\n}\n\n::-webkit-scrollbar-track\n{\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);\n    background-color: #F5F5F5;\n}\n\n::-webkit-scrollbar\n{\n    width: 12px;\n    background-color: #F5F5F5;\n}\n\n::-webkit-scrollbar-thumb\n{\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);\n    background-color: #555;\n}\n[contenteditable=true]:empty:before{\n  content: attr(placeholder);\n  display: block; /* For Firefox */\n}\n\n/* */\n\ndiv[contenteditable=true] {\n  border: 1px solid #AAA;\n  width: 100%;\n  padding: 5px;\n}\n\npre {\n  background:#EEE;\n  padding:5px;\n  width: 290px;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat/chat.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<container [sections]=\"sections\" *ngIf=\"joinned; else joinroom\"></container>\n<!-- <div class=\"input-group\" *ngIf=\"joinned\" style=\"padding-left:5px;padding-right:5px;\">\n    <span class=\"input-group-btn\" style=\"padding-right:2px;\">\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\n          +\n        </button>\n    </span>\n    <div contenteditable=\"true\" placeholder=\"Enter text here...\" style=\"padding-right:2px;\"></div>\n    <span class=\"input-group-btn\">\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\n            Send\n        </button>\n    </span>\n</div>\n<br> -->\n<!-- <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"logout()\">\n   Logout\n</button> -->\n<form (ngSubmit)=\"sendMessage()\" #msgForm=\"ngForm\" *ngIf=\"joinned\" (keyup.enter)=\"sendMessage()\">\n<msg-app [(cdMsg)] =\"msgData.message\" [(joinnedMsg)]=\"joinned\"> </msg-app> \n</form>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n            <!-- <div class=\"panel panel-primary\" *ngIf=\"joinned\"> -->\n                <!-- <div class=\"panel-heading\">\n                    <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\n                    <div class=\"btn-group pull-right\">\n                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"logout()\">\n                            Logout\n                        </button>\n                    </div>\n                </div> -->\n                <!-- <div #scrollMe class=\"panel-body\">\n                    <container [sections]=\"sections\"></container>\n                     <ul class=\"chat\">\n                        <li *ngFor=\"let c of chats\">\n                            <div class=\"left clearfix\" *ngIf=\"c.nickname===msgData.nickname; else rightchat\">\n                                <span class=\"chat-img pull-left\">\n                              <img src=\"http://placehold.it/50/55C1E7/fff&text=ME\" alt=\"User Avatar\" class=\"img-circle\" />\n                            </span>\n                                <div class=\"chat-body clearfix\">\n                                    <div class=\"header\">\n                                        <strong class=\"primary-font\">{{ c.nickname }}</strong> <small class=\"pull-right text-muted\">\n                                        <span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\n                                    </div>\n                                    <p>{{ c.message }}</p>\n                                </div>\n                            </div>\n                            <ng-template #rightchat>\n                                <div class=\"right clearfix\">\n                                    <span class=\"chat-img pull-right\">\n                                <img src=\"http://placehold.it/50/FA6F57/fff&text=U\" alt=\"User Avatar\" class=\"img-circle\" />\n                              </span>\n                                    <div class=\"chat-body clearfix\">\n                                        <div class=\"header\">\n                                            <small class=\" text-muted\"><span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\n                                            <strong class=\"pull-right primary-font\">{{ c.nickname }}</strong>\n                                        </div>\n                                        <p>{{ c.message }}</p>\n                                    </div>\n                                </div>\n                            </ng-template>\n                        </li>\n                    </ul> \n                </div> -->\n                <!-- <div class=\"panel-footer\">\n                    <form (ngSubmit)=\"sendMessage()\" #msgForm=\"ngForm\">\n                        <div class=\"input-group\">\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.room\" name=\"room\" />\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.nickname\" name=\"nickname\" />\n                            <input id=\"btn-input\" type=\"text\" [(ngModel)]=\"msgData.message\" name=\"message\" class=\"form-control input-sm\" placeholder=\"Type your message here...\"\n                                required=\"\" />\n                            <span class=\"input-group-btn\">\n                            <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\" [disabled]=\"!msgForm.form.valid\">\n                                Send</button>\n                        </span>\n                        </div>\n                    </form>\n                </div> -->\n\n            <!-- </div> -->\n            <ng-template #joinroom>\n                <div class=\"panel panel-primary\">\n                    <div class=\"panel-heading\">\n                        <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\n                        <div class=\"btn-group pull-right\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"showAddRoomDialog()\">\n                            Create New Room\n                        </button>\n                        </div>\n                    </div>\n                    <div class=\"panel-body\">\n                        <h1>Select Chat Room</h1>\n                        <form (ngSubmit)=\"joinRoom()\" #joinForm=\"ngForm\">\n                            <div class=\"form-group\">\n                                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newUser.nickname\" name=\"nickname\" placeholder=\"Nickname\" required=\"\"\n                                />\n                            </div>\n                            <div class=\"form-group\">\n                                <select class=\"form-control\" [(ngModel)]=\"newUser.room\" name=\"room\" required=\"\">\n                        <!-- <option>Select Room</option> -->\n                        <option *ngFor='let room of rooms' [value]=\"room.roomname\">\n                          {{room.roomname}}\n                        </option>\n                      </select>\n                            </div>\n                            <div class=\"form-group\">\n                                <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!joinForm.form.valid\">Join</button>\n                            </div>\n                        </form>\n                    </div>\n                </div>\n            </ng-template>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat/chat.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__("../../../../../src/app/chat.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__roomadd_component__ = __webpack_require__("../../../../../src/app/chat/roomadd.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -741,14 +829,14 @@ var ChatComponent = (function () {
     return ChatComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('scrollMe'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('scrollMe'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
 ], ChatComponent.prototype, "myScrollContainer", void 0);
 ChatComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-chat',
-        template: __webpack_require__(412),
-        styles: [__webpack_require__(398)]
+        template: __webpack_require__("../../../../../src/app/chat/chat.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/chat/chat.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__chat_service__["a" /* ChatService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__chat_service__["a" /* ChatService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__["DialogService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__["DialogService"]) === "function" && _c || Object])
 ], ChatComponent);
@@ -758,12 +846,102 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 325:
+/***/ "../../../../../src/app/chat/roomadd.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomaddComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var RoomaddComponent = (function (_super) {
+    __extends(RoomaddComponent, _super);
+    function RoomaddComponent(http, dialogService) {
+        var _this = _super.call(this, dialogService) || this;
+        _this.http = http;
+        _this.RoomData = {};
+        return _this;
+    }
+    RoomaddComponent.prototype.apply = function () {
+        this.result = this.RoomData;
+        this.close();
+    };
+    RoomaddComponent.prototype.closeBox = function () {
+        var body = document.getElementsByTagName("body")[0];
+        body.style.overflow = "";
+        this.close();
+    };
+    return RoomaddComponent;
+}(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogComponent"]));
+RoomaddComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'prompt',
+        template: "<div class=\"modal-dialog\">\n                <div class=\"modal-content\">\n                   <div class=\"modal-header\">\n                     <h4 class=\"modal-title\">{{title || 'Prompt'}}</h4>\n                     <button type=\"button\" class=\"close\" (click)=\"close()\">&times;</button>\n                   </div>\n                   <div class=\"modal-body\">\n\n                <form role=\"form\">\n                  <div class=\"form-group\">\n                    <label for=\"roomname\">Room Name</label>\n                      <input type=\"text\" class=\"form-control\"\n                      id=\"roomname\"  name=\"roomname\" [(ngModel)]=\"RoomData.roomname\"/>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"roomdesc\">Room Description</label>\n                      <input type=\"text\" class=\"form-control\"\n                      id=\"roomdesc\" name=\"roomdesc\" [(ngModel)]=\"RoomData.roomdesc\"/>\n                  </div>                 \n                </form>\n                    \n                   </div>\n                   <div class=\"modal-footer\">\n                     <button type=\"button\" class=\"btn btn-primary\" (click)=\"apply()\">OK</button>\n                     <button type=\"button\" class=\"btn btn-default\" (click)=\"closeBox()\" >Cancel</button>\n                   </div>\n                 </div>\n                </div>"
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"]) === "function" && _b || Object])
+], RoomaddComponent);
+
+var _a, _b;
+//# sourceMappingURL=roomadd.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/container/container.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".header{\n  position: fixed;\n  top: 0px;\n  width:100%;\n  z-index: 2;\n  background: #252830; \n  color: white; \n  height:60px; \n  margin-left: 0px;\n  -ms-flex-line-pack: center;\n      align-content: center\n} \nul {\n  list-style-type: none; \n  padding: 5px;\n}\n \nh2 {\n    font: 33px sans-serif;\n    margin-top: 13px;\n    text-align: center;\n    text-transform: uppercase;\n} ", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/container/container.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"header\" *ngIf=\"currentSectionName!=null\">\n      <h2 class=\"background\"><span>{{currentSectionName}}</span></h2>\n</div>\n<ul>\n     <li *ngFor=\"let section of sections\"> \n        <section [content]=\"section\" (sectionPosition)=\"sectionPosition($event)\"></section>\n     </li> \n</ul>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/container/container.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContainerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -813,20 +991,20 @@ var ContainerComponent = (function () {
     return ContainerComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], ContainerComponent.prototype, "sections", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])("window:scroll", []),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])("window:scroll", []),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], ContainerComponent.prototype, "onWindowScroll", null);
 ContainerComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'container',
-        template: __webpack_require__(413),
-        styles: [__webpack_require__(399)]
+        template: __webpack_require__("../../../../../src/app/container/container.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/container/container.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object])
 ], ContainerComponent);
@@ -836,14 +1014,39 @@ var _a;
 
 /***/ }),
 
-/***/ 326:
+/***/ "../../../../../src/app/messagecontainer/messagecontainer.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "[contenteditable=true]:empty:before{\n  content: attr(placeholder);\n  display: block; /* For Firefox */\n}\n\n/* */\n\ndiv[contenteditable=true] {\n  border: 1px solid #AAA;\n  width: 100%;\n  padding: 5px;\n}\n\npre {\n  background:#EEE;\n  padding:5px;\n  width: 290px;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/messagecontainer/messagecontainer.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"input-group\" style=\"padding-left:5px;padding-right:5px;\">\n    <span class=\"input-group-btn\" style=\"padding-right:5px;\">\n        <button (click)=\"logout()\" class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\n          Logout\n        </button>\n    </span>\n    <div style=\"width:90%\" contenteditable=\"true\" placeholder=\"Enter text here...\" [textContent]=\"cdMsg\" (input)=\"update($event.target.textContent)\" ></div>\n    <span class=\"input-group-btn\" style=\"padding-left:5px;\">\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\n            Send\n        </button>\n    </span>\n</div>\n<br>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/messagecontainer/messagecontainer.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_socket_io_client__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_socket_io_client__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageContainerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_socket_io_client__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -876,26 +1079,26 @@ var MessageContainerComponent = (function () {
     return MessageContainerComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", String)
 ], MessageContainerComponent.prototype, "cdMsg", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", Object)
 ], MessageContainerComponent.prototype, "cdMsgChange", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Boolean)
 ], MessageContainerComponent.prototype, "joinnedMsg", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", Object)
 ], MessageContainerComponent.prototype, "joinnedMsgChange", void 0);
 MessageContainerComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'msg-app',
-        template: __webpack_require__(414),
-        styles: [__webpack_require__(400)]
+        template: __webpack_require__("../../../../../src/app/messagecontainer/messagecontainer.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/messagecontainer/messagecontainer.component.css")]
     })
 ], MessageContainerComponent);
 
@@ -903,17 +1106,16 @@ MessageContainerComponent = __decorate([
 
 /***/ }),
 
-/***/ 327:
+/***/ "../../../../../src/app/scrollcontainer/roomadd.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(51);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoomaddComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -957,11 +1159,11 @@ var RoomaddComponent = (function (_super) {
     return RoomaddComponent;
 }(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogComponent"]));
 RoomaddComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'prompt',
         template: "<div class=\"modal-dialog\">\n                <div class=\"modal-content\">\n                   <div class=\"modal-header\">\n                     <h4 class=\"modal-title\">{{title || 'Prompt'}}</h4>\n                     <button type=\"button\" class=\"close\" (click)=\"close()\">&times;</button>\n                   </div>\n                   <div class=\"modal-body\">\n\n                <form role=\"form\">\n                  <div class=\"form-group\">\n                    <label for=\"roomname\">Room Name</label>\n                      <input type=\"text\" class=\"form-control\"\n                      id=\"roomname\"  name=\"roomname\" [(ngModel)]=\"RoomData.roomname\"/>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"roomdesc\">Room Description</label>\n                      <input type=\"text\" class=\"form-control\"\n                      id=\"roomdesc\" name=\"roomdesc\" [(ngModel)]=\"RoomData.roomdesc\"/>\n                  </div>                 \n                </form>\n                    \n                   </div>\n                   <div class=\"modal-footer\">\n                     <button type=\"button\" class=\"btn btn-primary\" (click)=\"apply()\">OK</button>\n                     <button type=\"button\" class=\"btn btn-default\" (click)=\"closeBox()\" >Cancel</button>\n                   </div>\n                 </div>\n                </div>"
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"]) === "function" && _b || Object])
 ], RoomaddComponent);
 
 var _a, _b;
@@ -969,18 +1171,18 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 328:
+/***/ "../../../../../src/app/scrollcontainer/scrollcontainer.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__roomadd_component__ = __webpack_require__(327);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScrollcontainerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__("../../../../../src/app/chat.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_socket_io_client__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__roomadd_component__ = __webpack_require__("../../../../../src/app/scrollcontainer/roomadd.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1429,11 +1631,11 @@ var ScrollcontainerComponent = (function () {
     return ScrollcontainerComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('scrollMe'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('scrollMe'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
 ], ScrollcontainerComponent.prototype, "myScrollContainer", void 0);
 ScrollcontainerComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-chat',
         // templateUrl: './scrollcontainer.component.html',
         // styleUrls: ['./scrollcontainer.component.css']
@@ -1447,13 +1649,38 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 329:
+/***/ "../../../../../src/app/section/section.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "img{\n  height: 320px;} \nhr{\n   margin-bottom: 21px;\n   border: 0;\n  border-top: 1px solid #434857;\n}\n.subheaderdemoBasicUsage .face {\n  border-radius: 30px;\n  border: 1px solid #ddd;\n  width: 48px;\n  margin: 16px;\n}\n/* .message-pane {\n  display: inline-block;\n  vertical-align: top;\n  height: 100%;\n  width: 100%;\n  overflow-y: scroll;\n  padding: 55px 15px 65px 15px;\n  -webkit-overflow-scrolling: touch;\n} */\n\n.message-pane {\n  display:inline-block;\n  vertical-align: top;\n  height:100%;\n  width:100%;\n  overflow-y:hidden;\n  overflow-x:hidden;\n  padding:0px 15px 10px 15px;\n  -webkit-overflow-scrolling: touch;\n}\n\n.message-pane .header {\n  position:fixed;\n  top:0;\n  background:#fff;\n  width:100%;\n  z-index:2;\n}\n\n.message-pane .header h1 {\n  padding:12px 0 10px 0;\n  margin-top:0px;\n  margin-bottom:0px;\n  font-size:24px;\n  color:#555459;\n  font-weight:900;\n}\n\n.message-pane .message-form {\n  position:fixed;\n  bottom:0;\n  padding:0 15px 15px 0;\n  background:#fff;\n  width:100%;\n}\n\n.message-pane .message-wrap {\n  position:relative;\n  margin-top:15px;\n}\n\n.message-pane .message-wrap .user-pic {\n  width:36px;\n  height:36px;\n  border-radius:4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.message-pane .message-wrap .message-info {\n  display: inline-block;\n  vertical-align: top;\n  padding-left:5px;\n}\n\n.message-pane .message-wrap .message-info .user-name {\n  color:#555459;\n  font-weight:900;\n}\n\n.message-pane .message-wrap .message-info .user-name span{\n  color:#ccc;\n  font-weight: normal;\n  font-size:10px;\n}\n\n[contenteditable=true]:empty:before{\n  content: attr(placeholder);\n  display: block; /* For Firefox */\n}\n\n/* */\n\ndiv[contenteditable=true] {\n  border: 1px solid #AAA;\n  width: 100%;\n  padding: 5px;\n}\n\npre {\n  background:#EEE;\n  padding:5px;\n  width: 290px;\n}\n\n.container_186vsl5 {\n    -webkit-box-flex: 1 !important;\n            flex: 1 !important;\n    padding: 10px 10px 0 10px !important;\n    background: #fff !important;\n    overflow-y: auto !important;\n    -webkit-flex: 1 !important;\n    -ms-flex: 1 !important;\n    -webkit-overflow-scrolling: touch;\n}\n\n.dayDivider_1yqkpak {\n    position: relative !important;\n    margin: 1rem 0 !important;\n    text-align: center !important;\n}\n\n.dayText_zrlbv3 {\n    z-index: 1 !important;\n    position: relative !important;\n    background: #fff !important;\n    padding: 0 12px !important;\n}\n\n.dayDivider_1yqkpak::after {\n    position: absolute !important;\n    top: 50% !important;\n    right: 0 !important;\n    left: 0 !important;\n    height: 1px !important;\n    background: rgb(240,240,240) !important;\n    content: \"\" !important;\n}\n\n/* div,* {\n    box-sizing: none;\n} */\n#iddisplay{\n display: -webkit-flex; margin-bottom: 10px;\n}\n.divbutton mat-icon {\n    display: none;\n    float:right\n}\n\n.divbutton:hover mat-icon {\n    display: block;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/section/section.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <h2>{{content.name}}</h2> -->\n<!-- <mat-divider></mat-divider> -->\n<!-- <img src=\"{{content.img}}\"/> -->\n<!-- <div class=\"message-pane subheaderdemoBasicUsage\" layout=\"column\" flex=\"\" layout-fill=\"\" ng-cloak=\"\" class=\"\">\n<mat-list layout-padding=\"\">\n    <mat-list-item *ngFor=\"let message of content.messages\">\n        <mat-icon matListIcon>folder</mat-icon>\n        <h4 matLine>{{message.name}}</h4>\n        <p matLine class=\"demo-2\"> {{message.updated}} </p>\n    </mat-list-item>\n</mat-list>\n</div> -->\n<!-- <div class=\"message-pane\">\n  <span><b>{{content.name}}</b></span>\n  <div class=\"message-wrap\" *ngFor=\"let message of content.messages\">\n    <img class=\"user-pic\" src=\"{{message.img}}\">\n    <div class=\"message-info\">\n      <div class=\"user-name\">\n        {{ message.messages.nickname }}\n        <span class=\"timestamp\">{{ message.messages.updated_at | date:'short' }}</span>\n      </div>\n      <div>\n        {{ message.messages.message }}\n      </div>\n    </div>\n  </div>\n</div> -->\n<div class=\"container_186vsl5\">\n  <div>\n    <div class=\"dayDivider_1yqkpak\">\n      <span class=\"dayText_zrlbv3\">\n        <span><b>{{content.name}}</b></span>\n      </span>\n    </div>\n    <div id=\"iddisplay\" *ngFor=\"let message of content.messages\">\n      <img src=\"{{message.img}}\" style=\"width: 40px; height: 40px; border-radius: 4px; margin-right: 10px;\">\n      <div class=\"divbutton\">\n        <div>\n          <b style=\"margin-right: 8px; font-size: 14px;\">\n             {{ message.messages.nickname }}\n          </b>\n          <time style=\"margin-right: 12px;font-size: 12px; color: rgb(192, 192, 192);\">\n            {{ message.messages.updated_at | date:'shortTime' }}\n          </time>\n          <mat-icon title=\"Add Reaction\" style=\"cursor:pointer\">face</mat-icon>\n          <mat-icon title=\"Copy Message\" style=\"cursor:pointer\" (click)=\"copyTextToClipboard(message.messages.message)\">assignment</mat-icon>\n        </div>\n        <div style=\"display: -webkit-flex;width:100%\" >\n          {{ message.messages.message }}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- <div id=\"msg_input\" class=\"ql-container\"><div class=\"ql-editor ql-blank\" contenteditable=\"true\" tabindex=\"1\" role=\"textbox\" aria-multiline=\"true\" aria-haspopup=\"true\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\" aria-label=\"Message @Priyansh Dwivedi\"><p><br></p></div><div class=\"ql-clipboard\" contenteditable=\"true\" tabindex=\"-1\" aria-hidden=\"true\" role=\"presentation\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\"></div><div class=\"ql-placeholder\" aria-hidden=\"true\" role=\"presentation\" tabindex=\"-1\">Message @Priyansh Dwivedi</div></div> -->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/section/section.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__(70);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SectionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_service__ = __webpack_require__("../../../../../src/app/chat.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1507,24 +1734,24 @@ var SectionComponent = (function () {
     return SectionComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", Object)
 ], SectionComponent.prototype, "sectionPosition", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], SectionComponent.prototype, "content", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', ['$event']),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('window:resize', ['$event']),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], SectionComponent.prototype, "onResize", null);
 SectionComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'section',
-        template: __webpack_require__(415),
-        styles: [__webpack_require__(401)]
+        template: __webpack_require__("../../../../../src/app/section/section.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/section/section.component.css")]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__chat_service__["a" /* ChatService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__chat_service__["a" /* ChatService */]) === "function" && _b || Object])
 ], SectionComponent);
@@ -1534,7 +1761,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 330:
+/***/ "../../../../../src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1551,268 +1778,41 @@ var environment = {
 
 /***/ }),
 
-/***/ 397:
+/***/ "../../../../../src/main.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+}
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(45)();
-// imports
+module.exports = __webpack_require__("../../../../../src/main.ts");
 
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 398:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(45)();
-// imports
-
-
-// module
-exports.push([module.i, ".chat\r\n{\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.chat li\r\n{\r\n    margin-bottom: 10px;\r\n    padding-bottom: 5px;\r\n    border-bottom: 1px dotted #B3A9A9;\r\n}\r\n\r\n.chat li.left .chat-body\r\n{\r\n    margin-left: 60px;\r\n}\r\n\r\n.chat li.right .chat-body\r\n{\r\n    margin-right: 60px;\r\n}\r\n\r\n\r\n.chat li .chat-body p\r\n{\r\n    margin: 0;\r\n    color: #777777;\r\n}\r\n\r\n.panel .slidedown .glyphicon, .chat .glyphicon\r\n{\r\n    margin-right: 5px;\r\n}\r\n\r\n.panel-body\r\n{\r\n    overflow-y: scroll;\r\n    /* height: 250px; */\r\n}\r\n\r\n::-webkit-scrollbar-track\r\n{\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n::-webkit-scrollbar\r\n{\r\n    width: 12px;\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n::-webkit-scrollbar-thumb\r\n{\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);\r\n    background-color: #555;\r\n}\r\n[contenteditable=true]:empty:before{\r\n  content: attr(placeholder);\r\n  display: block; /* For Firefox */\r\n}\r\n\r\n/* */\r\n\r\ndiv[contenteditable=true] {\r\n  border: 1px solid #AAA;\r\n  width: 100%;\r\n  padding: 5px;\r\n}\r\n\r\npre {\r\n  background:#EEE;\r\n  padding:5px;\r\n  width: 290px;\r\n}", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 399:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(45)();
-// imports
-
-
-// module
-exports.push([module.i, ".header{\r\n  position: fixed;\r\n  top: 0px;\r\n  width:100%;\r\n  z-index: 2;\r\n  background: #252830; \r\n  color: white; \r\n  height:60px; \r\n  margin-left: 0px;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center\r\n} \r\nul {\r\n  list-style-type: none; \r\n  padding: 5px;\r\n}\r\n \r\nh2 {\r\n    font: 33px sans-serif;\r\n    margin-top: 13px;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n} ", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 400:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(45)();
-// imports
-
-
-// module
-exports.push([module.i, "[contenteditable=true]:empty:before{\r\n  content: attr(placeholder);\r\n  display: block; /* For Firefox */\r\n}\r\n\r\n/* */\r\n\r\ndiv[contenteditable=true] {\r\n  border: 1px solid #AAA;\r\n  width: 100%;\r\n  padding: 5px;\r\n}\r\n\r\npre {\r\n  background:#EEE;\r\n  padding:5px;\r\n  width: 290px;\r\n}", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 401:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(45)();
-// imports
-
-
-// module
-exports.push([module.i, "img{\r\n  height: 320px;} \r\nhr{\r\n   margin-bottom: 21px;\r\n   border: 0;\r\n  border-top: 1px solid #434857;\r\n}\r\n.subheaderdemoBasicUsage .face {\r\n  border-radius: 30px;\r\n  border: 1px solid #ddd;\r\n  width: 48px;\r\n  margin: 16px;\r\n}\r\n/* .message-pane {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  height: 100%;\r\n  width: 100%;\r\n  overflow-y: scroll;\r\n  padding: 55px 15px 65px 15px;\r\n  -webkit-overflow-scrolling: touch;\r\n} */\r\n\r\n.message-pane {\r\n  display:inline-block;\r\n  vertical-align: top;\r\n  height:100%;\r\n  width:100%;\r\n  overflow-y:hidden;\r\n  overflow-x:hidden;\r\n  padding:0px 15px 10px 15px;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n\r\n.message-pane .header {\r\n  position:fixed;\r\n  top:0;\r\n  background:#fff;\r\n  width:100%;\r\n  z-index:2;\r\n}\r\n\r\n.message-pane .header h1 {\r\n  padding:12px 0 10px 0;\r\n  margin-top:0px;\r\n  margin-bottom:0px;\r\n  font-size:24px;\r\n  color:#555459;\r\n  font-weight:900;\r\n}\r\n\r\n.message-pane .message-form {\r\n  position:fixed;\r\n  bottom:0;\r\n  padding:0 15px 15px 0;\r\n  background:#fff;\r\n  width:100%;\r\n}\r\n\r\n.message-pane .message-wrap {\r\n  position:relative;\r\n  margin-top:15px;\r\n}\r\n\r\n.message-pane .message-wrap .user-pic {\r\n  width:36px;\r\n  height:36px;\r\n  border-radius:4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.message-pane .message-wrap .message-info {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  padding-left:5px;\r\n}\r\n\r\n.message-pane .message-wrap .message-info .user-name {\r\n  color:#555459;\r\n  font-weight:900;\r\n}\r\n\r\n.message-pane .message-wrap .message-info .user-name span{\r\n  color:#ccc;\r\n  font-weight: normal;\r\n  font-size:10px;\r\n}\r\n\r\n[contenteditable=true]:empty:before{\r\n  content: attr(placeholder);\r\n  display: block; /* For Firefox */\r\n}\r\n\r\n/* */\r\n\r\ndiv[contenteditable=true] {\r\n  border: 1px solid #AAA;\r\n  width: 100%;\r\n  padding: 5px;\r\n}\r\n\r\npre {\r\n  background:#EEE;\r\n  padding:5px;\r\n  width: 290px;\r\n}\r\n\r\n.container_186vsl5 {\r\n    -webkit-box-flex: 1 !important;\r\n            flex: 1 !important;\r\n    padding: 10px 10px 0 10px !important;\r\n    background: #fff !important;\r\n    overflow-y: auto !important;\r\n    -webkit-flex: 1 !important;\r\n    -ms-flex: 1 !important;\r\n    -webkit-overflow-scrolling: touch;\r\n}\r\n\r\n.dayDivider_1yqkpak {\r\n    position: relative !important;\r\n    margin: 1rem 0 !important;\r\n    text-align: center !important;\r\n}\r\n\r\n.dayText_zrlbv3 {\r\n    z-index: 1 !important;\r\n    position: relative !important;\r\n    background: #fff !important;\r\n    padding: 0 12px !important;\r\n}\r\n\r\n.dayDivider_1yqkpak::after {\r\n    position: absolute !important;\r\n    top: 50% !important;\r\n    right: 0 !important;\r\n    left: 0 !important;\r\n    height: 1px !important;\r\n    background: rgb(240,240,240) !important;\r\n    content: \"\" !important;\r\n}\r\n\r\n/* div,* {\r\n    box-sizing: none;\r\n} */\r\n#iddisplay{\r\n display: -webkit-flex; margin-bottom: 10px;\r\n}\r\n.divbutton mat-icon {\r\n    display: none;\r\n    float:right\r\n}\r\n\r\n.divbutton:hover mat-icon {\r\n    display: block;\r\n}", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 411:
-/***/ (function(module, exports) {
-
-module.exports = "<router-outlet></router-outlet>\r\n"
-
-/***/ }),
-
-/***/ 412:
-/***/ (function(module, exports) {
-
-module.exports = "<container [sections]=\"sections\" *ngIf=\"joinned; else joinroom\"></container>\r\n<!-- <div class=\"input-group\" *ngIf=\"joinned\" style=\"padding-left:5px;padding-right:5px;\">\r\n    <span class=\"input-group-btn\" style=\"padding-right:2px;\">\r\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n          +\r\n        </button>\r\n    </span>\r\n    <div contenteditable=\"true\" placeholder=\"Enter text here...\" style=\"padding-right:2px;\"></div>\r\n    <span class=\"input-group-btn\">\r\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n            Send\r\n        </button>\r\n    </span>\r\n</div>\r\n<br> -->\r\n<!-- <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"logout()\">\r\n   Logout\r\n</button> -->\r\n<form (ngSubmit)=\"sendMessage()\" #msgForm=\"ngForm\" *ngIf=\"joinned\" (keyup.enter)=\"sendMessage()\">\r\n<msg-app [(cdMsg)] =\"msgData.message\" [(joinnedMsg)]=\"joinned\"> </msg-app> \r\n</form>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n            <!-- <div class=\"panel panel-primary\" *ngIf=\"joinned\"> -->\r\n                <!-- <div class=\"panel-heading\">\r\n                    <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\r\n                    <div class=\"btn-group pull-right\">\r\n                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"logout()\">\r\n                            Logout\r\n                        </button>\r\n                    </div>\r\n                </div> -->\r\n                <!-- <div #scrollMe class=\"panel-body\">\r\n                    <container [sections]=\"sections\"></container>\r\n                     <ul class=\"chat\">\r\n                        <li *ngFor=\"let c of chats\">\r\n                            <div class=\"left clearfix\" *ngIf=\"c.nickname===msgData.nickname; else rightchat\">\r\n                                <span class=\"chat-img pull-left\">\r\n                              <img src=\"http://placehold.it/50/55C1E7/fff&text=ME\" alt=\"User Avatar\" class=\"img-circle\" />\r\n                            </span>\r\n                                <div class=\"chat-body clearfix\">\r\n                                    <div class=\"header\">\r\n                                        <strong class=\"primary-font\">{{ c.nickname }}</strong> <small class=\"pull-right text-muted\">\r\n                                        <span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\r\n                                    </div>\r\n                                    <p>{{ c.message }}</p>\r\n                                </div>\r\n                            </div>\r\n                            <ng-template #rightchat>\r\n                                <div class=\"right clearfix\">\r\n                                    <span class=\"chat-img pull-right\">\r\n                                <img src=\"http://placehold.it/50/FA6F57/fff&text=U\" alt=\"User Avatar\" class=\"img-circle\" />\r\n                              </span>\r\n                                    <div class=\"chat-body clearfix\">\r\n                                        <div class=\"header\">\r\n                                            <small class=\" text-muted\"><span class=\"glyphicon glyphicon-time\"></span>{{ c.updated_at | date: 'medium' }}</small>\r\n                                            <strong class=\"pull-right primary-font\">{{ c.nickname }}</strong>\r\n                                        </div>\r\n                                        <p>{{ c.message }}</p>\r\n                                    </div>\r\n                                </div>\r\n                            </ng-template>\r\n                        </li>\r\n                    </ul> \r\n                </div> -->\r\n                <!-- <div class=\"panel-footer\">\r\n                    <form (ngSubmit)=\"sendMessage()\" #msgForm=\"ngForm\">\r\n                        <div class=\"input-group\">\r\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.room\" name=\"room\" />\r\n                            <input type=\"hidden\" [(ngModel)]=\"msgData.nickname\" name=\"nickname\" />\r\n                            <input id=\"btn-input\" type=\"text\" [(ngModel)]=\"msgData.message\" name=\"message\" class=\"form-control input-sm\" placeholder=\"Type your message here...\"\r\n                                required=\"\" />\r\n                            <span class=\"input-group-btn\">\r\n                            <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\" [disabled]=\"!msgForm.form.valid\">\r\n                                Send</button>\r\n                        </span>\r\n                        </div>\r\n                    </form>\r\n                </div> -->\r\n\r\n            <!-- </div> -->\r\n            <ng-template #joinroom>\r\n                <div class=\"panel panel-primary\">\r\n                    <div class=\"panel-heading\">\r\n                        <span class=\"glyphicon glyphicon-comment\"></span> {{ msgData.room }}\r\n                        <div class=\"btn-group pull-right\">\r\n                            <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"showAddRoomDialog()\">\r\n                            Create New Room\r\n                        </button>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"panel-body\">\r\n                        <h1>Select Chat Room</h1>\r\n                        <form (ngSubmit)=\"joinRoom()\" #joinForm=\"ngForm\">\r\n                            <div class=\"form-group\">\r\n                                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newUser.nickname\" name=\"nickname\" placeholder=\"Nickname\" required=\"\"\r\n                                />\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <select class=\"form-control\" [(ngModel)]=\"newUser.room\" name=\"room\" required=\"\">\r\n                        <!-- <option>Select Room</option> -->\r\n                        <option *ngFor='let room of rooms' [value]=\"room.roomname\">\r\n                          {{room.roomname}}\r\n                        </option>\r\n                      </select>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!joinForm.form.valid\">Join</button>\r\n                            </div>\r\n                        </form>\r\n                    </div>\r\n                </div>\r\n            </ng-template>\r\n        </div>\r\n    </div>\r\n</div>"
-
-/***/ }),
-
-/***/ 413:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h2 class=\"background\"><span>{{currentSectionName}}</span></h2>\r\n</div>\r\n<ul>\r\n     <li *ngFor=\"let section of sections\"> \r\n        <section [content]=\"section\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n     </li> \r\n</ul>"
-
-/***/ }),
-
-/***/ 414:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"input-group\" style=\"padding-left:5px;padding-right:5px;\">\r\n    <span class=\"input-group-btn\" style=\"padding-right:5px;\">\r\n        <button (click)=\"logout()\" class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n          Logout\r\n        </button>\r\n    </span>\r\n    <div style=\"width:90%\" contenteditable=\"true\" placeholder=\"Enter text here...\" [textContent]=\"cdMsg\" (input)=\"update($event.target.textContent)\" ></div>\r\n    <span class=\"input-group-btn\" style=\"padding-left:5px;\">\r\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n            Send\r\n        </button>\r\n    </span>\r\n</div>\r\n<br>"
-
-/***/ }),
-
-/***/ 415:
-/***/ (function(module, exports) {
-
-module.exports = "<!-- <h2>{{content.name}}</h2> -->\r\n<!-- <mat-divider></mat-divider> -->\r\n<!-- <img src=\"{{content.img}}\"/> -->\r\n<!-- <div class=\"message-pane subheaderdemoBasicUsage\" layout=\"column\" flex=\"\" layout-fill=\"\" ng-cloak=\"\" class=\"\">\r\n<mat-list layout-padding=\"\">\r\n    <mat-list-item *ngFor=\"let message of content.messages\">\r\n        <mat-icon matListIcon>folder</mat-icon>\r\n        <h4 matLine>{{message.name}}</h4>\r\n        <p matLine class=\"demo-2\"> {{message.updated}} </p>\r\n    </mat-list-item>\r\n</mat-list>\r\n</div> -->\r\n<!-- <div class=\"message-pane\">\r\n  <span><b>{{content.name}}</b></span>\r\n  <div class=\"message-wrap\" *ngFor=\"let message of content.messages\">\r\n    <img class=\"user-pic\" src=\"{{message.img}}\">\r\n    <div class=\"message-info\">\r\n      <div class=\"user-name\">\r\n        {{ message.messages.nickname }}\r\n        <span class=\"timestamp\">{{ message.messages.updated_at | date:'short' }}</span>\r\n      </div>\r\n      <div>\r\n        {{ message.messages.message }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n<div class=\"container_186vsl5\">\r\n  <div>\r\n    <div class=\"dayDivider_1yqkpak\">\r\n      <span class=\"dayText_zrlbv3\">\r\n        <span><b>{{content.name}}</b></span>\r\n      </span>\r\n    </div>\r\n    <div id=\"iddisplay\" *ngFor=\"let message of content.messages\">\r\n      <img src=\"{{message.img}}\" style=\"width: 40px; height: 40px; border-radius: 4px; margin-right: 10px;\">\r\n      <div class=\"divbutton\">\r\n        <div>\r\n          <b style=\"margin-right: 8px; font-size: 14px;\">\r\n             {{ message.messages.nickname }}\r\n          </b>\r\n          <time style=\"margin-right: 12px;font-size: 12px; color: rgb(192, 192, 192);\">\r\n            {{ message.messages.updated_at | date:'shortTime' }}\r\n          </time>\r\n          <mat-icon title=\"Add Reaction\" style=\"cursor:pointer\">face</mat-icon>\r\n          <mat-icon title=\"Copy Message\" style=\"cursor:pointer\" (click)=\"copyTextToClipboard(message.messages.message)\">assignment</mat-icon>\r\n        </div>\r\n        <div style=\"display: -webkit-flex;width:100%\" >\r\n          {{ message.messages.message }}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- <div id=\"msg_input\" class=\"ql-container\"><div class=\"ql-editor ql-blank\" contenteditable=\"true\" tabindex=\"1\" role=\"textbox\" aria-multiline=\"true\" aria-haspopup=\"true\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\" aria-label=\"Message @Priyansh Dwivedi\"><p><br></p></div><div class=\"ql-clipboard\" contenteditable=\"true\" tabindex=\"-1\" aria-hidden=\"true\" role=\"presentation\" spellcheck=\"true\" autocorrect=\"off\" autocomplete=\"off\"></div><div class=\"ql-placeholder\" aria-hidden=\"true\" role=\"presentation\" tabindex=\"-1\">Message @Priyansh Dwivedi</div></div> -->"
-
-/***/ }),
-
-/***/ 690:
+/***/ 1:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
-/***/ }),
-
-/***/ 691:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(290);
-
-
-/***/ }),
-
-/***/ 70:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ChatService = (function () {
-    function ChatService(http) {
-        this.http = http;
-    }
-    ChatService.prototype.getRooms = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.get('/room')
-                .map(function (res) { return res.json(); })
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.createRoom = function (data) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.post('/room', data)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.getChatByRoom = function (room) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.get('/chat/' + room)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.showChat = function (id) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.get('/chat/' + id)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.saveChat = function (data) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.post('/chat', data)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.updateChat = function (id, data) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.put('/chat/' + id, data)
-                .map(function (res) { return res.json(); })
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.deleteChat = function (id) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.delete('/chat/' + id)
-                .subscribe(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    ChatService.prototype.handleError = function (error) {
-        return Promise.reject(error.message || error);
-    };
-    return ChatService;
-}());
-ChatService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
-], ChatService);
-
-var _a;
-//# sourceMappingURL=chat.service.js.map
-
 /***/ })
 
-},[691]);
+},[0]);
 //# sourceMappingURL=main.bundle.js.map
