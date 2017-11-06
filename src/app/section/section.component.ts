@@ -3,22 +3,27 @@ import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'section',
-  templateUrl: './section.component.html',
-  styleUrls: ['./section.component.css']
+  // templateUrl: './section.component.html',
+  // styleUrls: ['./section.component.css']
+
+  templateUrl: './riot.component.html',
+  styleUrls: ['./theme.css','./bundle.css']
 
 })
 export class SectionComponent implements OnInit {
 
   @Output() sectionPosition = new EventEmitter();
   @Input() content: any;
-
+  value:string='false';
   constructor(private element: ElementRef, private chatService: ChatService) { }
 
   ngOnInit() {
     this.sectionPosition.emit({ name: this.content.name, position: this.element.nativeElement.offsetTop });
   }
 
-
+  showMenu(){
+    this.value = 'true';
+  }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.sectionPosition.emit({ name: this.content.name, position: this.element.nativeElement.offsetTop });

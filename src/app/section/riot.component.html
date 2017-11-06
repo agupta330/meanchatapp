@@ -1,0 +1,41 @@
+<div class="mx_RoomView_messageListWrapper">
+    <ol class="mx_RoomView_MessageList" aria-live="polite">
+        <li>
+            <h2 class="mx_DateSeparator">{{content.name}}</h2>
+        </li>
+        <li data-scroll-tokens="$15099841154004583psaCa:matrix.org" *ngFor="let message of content.messages">
+            <div class="mx_EventTile">
+                <!-- <div class="mx_EventTile_msgOption"><span class="mx_EventTile_readAvatars"><span><img class="mx_BaseAvatar mx_BaseAvatar_image mx_AccessibleButton" src="https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/GQARBLLbPNAsbDPVvKOzncQu?width=14&amp;height=14&amp;method=crop" width="14" height="14" title="Seen by @riot-bot:matrix.org at 21:31" alt="" aria-hidden="true" tabindex="0" role="button" style="left: 0px; top: 0px; visibility: visible;"></span></span>
+                </div> -->
+                <div class="mx_EventTile_avatar"><img class="mx_BaseAvatar mx_BaseAvatar_image mx_AccessibleButton" src="https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/GQARBLLbPNAsbDPVvKOzncQu?width=30&amp;height=30&amp;method=crop"
+                        width="30" height="30" title="@riot-bot:matrix.org" alt="" tabindex="0" role="button"></div>
+                <div class="mx_SenderProfile" dir="auto">
+                    <span class="mx_SenderProfile_name">{{ message.messages.nickname }}</span>
+                    <div></div>
+                </div>
+                <div class="mx_EventTile_line"><a href="https://matrix.to/#/!ktYANEKhYuRSNQeiKR:matrix.org/$15099841154004583psaCa:matrix.org"><span class="mx_MessageTimestamp" title="Mon, Nov 6 2017 21:31"> {{ message.messages.updated_at | date:'shortTime' }}</span></a>
+                    <span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body" dir="auto">{{ message.messages.message }}</span></span>
+                    <span class="mx_EventTile_editButton" title="Options" (click)="showMenu()">
+                            
+                                <div class="mx_ContextualMenu_chevron_left" style="top: 10px;" *ngIf="value=='true'">
+                                </div>
+                                <div *ngIf="value=='true'">
+                                    <div class="mx_MessageContextMenu_field">
+                                        Remove
+                                    </div>
+                                    <div class="mx_MessageContextMenu_field">
+                                        Forward Message
+                                    </div>
+                                    <div class="mx_MessageContextMenu_field">
+                                        View Source
+                                    </div>
+                                    <div class="mx_MessageContextMenu_field">
+                                        <a href="https://matrix.to/#/!mVmnIyUHOcMncONqxg:matrix.org/$15099114542413645hplGF:matrix.org" target="_blank" rel="noopener">Permalink</a></div><div class="mx_MessageContextMenu_field">Quote</div>
+                                </div>
+                                </span>
+                </div>
+            </div>
+        </li>
+        <li class="mx_RoomView_myReadMarker_container"></li>
+    </ol>
+</div>
