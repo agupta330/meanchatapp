@@ -17,6 +17,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { CommonModule } from '@angular/common';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContextMenuModule } from 'ngx-contextmenu';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -106,7 +107,9 @@ const ROUTES = [
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
-    StickyModule
+    StickyModule,
+    ContextMenuModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ChatService,

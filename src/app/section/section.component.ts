@@ -1,27 +1,31 @@
-import { Component, OnInit, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { ChatService } from '../chat.service';
 
+import { Component, OnInit, ElementRef, EventEmitter, HostListener, Input, Output,ViewChild } from '@angular/core';
+import { ChatService } from '../chat.service';
 @Component({
   selector: 'section',
   // templateUrl: './section.component.html',
   // styleUrls: ['./section.component.css']
 
   templateUrl: './riot.component.html',
-  styleUrls: ['./theme.css','./bundle.css']
+  styleUrls: ['./theme.css', './bundle.css']
 
 })
 export class SectionComponent implements OnInit {
-
+  public items = [
+    { name: 'John', otherProperty: 'Foo' },
+    { name: 'Joe', otherProperty: 'Bar' }
+  ];
+  @ViewChild(SectionComponent) public basicMenu: SectionComponent;
   @Output() sectionPosition = new EventEmitter();
   @Input() content: any;
-  value:string='false';
+  value: string = 'false';
   constructor(private element: ElementRef, private chatService: ChatService) { }
 
   ngOnInit() {
     this.sectionPosition.emit({ name: this.content.name, position: this.element.nativeElement.offsetTop });
   }
 
-  showMenu(){
+  showMenu() {
     this.value = 'true';
   }
   @HostListener('window:resize', ['$event'])

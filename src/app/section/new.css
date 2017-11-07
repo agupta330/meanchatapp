@@ -1,0 +1,9 @@
+.mx_RoomView,.mx_RoomView_messageListWrapper,.mx_UnknownDeviceDialog,.mx_UserSettings{-webkit-box-direction:normal}
+.mx_RoomView_messageListWrapper{margin-right:20px}
+.mx_RoomView_MessageList h2{display:none}
+.mx_RoomView_messageListWrapper{margin-right:20px}
+.mx_RoomView_MessageList h2{margin-left:0}
+.mx_RoomView_messageListWrapper{margin:auto;min-height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.mx_RoomView_MessageList{width:100%;list-style-type:none;padding:0}.mx_RoomView_MessageList li{clear:both}
+.mx_RoomView_messageListWrapper{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
+.mx_RoomView_MessageList li{clear:both}
