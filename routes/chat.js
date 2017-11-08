@@ -6,7 +6,7 @@ var Q = require('q');
 // var server = require('http').createServer(app);
 // var io = require('socket.io')(server);
 var Chat = require('../models/Chat.js');
-
+var moment = require('moment');
 // server.listen(3001);
 
 // // socket io
@@ -36,27 +36,97 @@ function ISOToDateFn(date) {//takes date in dd-mm-yyyy format
     month = '0' + month;
   }
 
-  console.log(dt + '-' + month + '-' + year);
+  // console.log(dt + '-' + month + '-' + year);
   var datereturn = dt + '-' + month + '-' + year
   return datereturn;
 }
+
+
+function getdaysArray() {
+  return [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+}
+
 router.get('/:room', function (req, res, next) {
   Chat.find({ room: req.params.room }, function (err, chats) {
     if (err) return next(err);
     var chats = chats;
     var chatArray = [];
     var otherArray = [];
+
     for (var i = 0; i < chats.length; i++) {
-      console.log(chats[i].updated_at);
-      chats[i].date = ISOToDateFn(chats[i].updated_at);
+
+      if (i != chats.length - 1) {
+        chats[i].messagesArray = [];
+        chats[i].date = ISOToDateFn(chats[i].updated_at);
+        chats[i + 1].date = ISOToDateFn(chats[i].updated_at);
+        var firstDate = chats[i].date;
+        var secondDate = chats[i + 1].date;
+        console.log(firstDate)
+        console.log(secondDate);
+        if (firstDate == secondDate) {
+          console.log("same chat continuing in same day check for nickname same and time five minute");
+          console.log(new Date(chats[i+1].updated_at));
+          console.log(new Date(chats[i].updated_at));
+          console.log("minus time", new Date(chats[i+1].updated_at).getMinutes() - new Date(chats[i].updated_at).getMinutes());
+          if ((chats[i].nickname == chats[i + 1].nickname) && (new Date(chats[i+1].updated_at).getMinutes() - new Date(chats[i].updated_at).getMinutes() <= 5)) {
+            console.log("Iam in same cont")
+            chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
+            chats[i].messagesArray.push({"message":chats[i+1].message,"timestamp":chats[i+1].updated_at,"nickname":chats[i+1].nickname});
+            // delete chats[i+1];
+            // delete chats[i+1];
+            chats.splice(i+1, 1)
+            // var chats = chats;
+          }
+          else{
+            chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
+          }
+        }
+        if (firstDate != secondDate) {
+          console.log("same chat not continuing different day");
+          chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
+        }
+      }
+
+
       if (i == chats.length - 1) {
         var array = chats;
         var result = [];
-          result = array.reduce(function (r, a) {
-            r[a.date] = r[a.date] || [];
-            r[a.date].push({name:a.date,img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",messages:a});
-            return r;
-          }, Object.create(null));
+        result = array.reduce(function (r, a) {
+          var date = new Date(a.updated_at);
+          var today = new Date();
+          var yesterday = new Date();
+          var days = getdaysArray();
+          yesterday.setDate(today.getDate() - 1);
+          if (date.toDateString() === today.toDateString()) {
+            var label = 'Today';
+          }
+          else if (date.toDateString() === yesterday.toDateString()) {
+            var label = 'Yesterday';
+          }
+          else if (today.getTime() - date.getTime() < 6 * 24 * 60 * 60 * 1000) {
+            label = days[date.getDay()];
+          }
+          else {
+            var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do YYYY');
+          }
+          r[label] = r[label] || [];
+          r[label].push(
+            {
+              name: label,
+              img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
+              messages: a,
+              messagesArray:a.messagesArray
+            });
+          return r;
+        }, Object.create(null));
 
         // console.log(result);
         res.json(result);

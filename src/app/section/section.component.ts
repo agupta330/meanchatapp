@@ -18,6 +18,8 @@ export class SectionComponent implements OnInit {
   @ViewChild(SectionComponent) public basicMenu: SectionComponent;
   @Output() sectionPosition = new EventEmitter();
   @Input() content: any;
+  @Input() sectionindex: any;
+  @Input() sectionname: any;
   value: string = 'false';
   constructor(private element: ElementRef, private chatService: ChatService) { }
 

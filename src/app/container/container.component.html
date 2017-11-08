@@ -2,7 +2,7 @@
       <h2 class="background"><span>{{currentSectionName}}</span></h2>
 </div>
 <ul>
-     <li *ngFor="let section of sections"> 
-        <section [content]="section" (sectionPosition)="sectionPosition($event)"></section>
+     <li *ngFor="let section of sections;let sectionindex=index"> 
+        <section [content]="section" [sectionindex]="sectionindex" [sectionname]="section.name" (sectionPosition)="sectionPosition($event)"></section>
      </li> 
 </ul>

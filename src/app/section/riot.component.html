@@ -1,39 +1,42 @@
 <div class="container_186vsl5" on-mouseleave="hoveredIndex=null">
     <ol class="mx_RoomView_MessageList" aria-live="polite">
         <li>
-            <h2 class="mx_DateSeparator">{{content.name}}</h2>
+            <h2 class="mx_DateSeparator">{{content.name}} </h2>
         </li>
-        <li data-scroll-tokens="$15099841154004583psaCa:matrix.org" *ngFor="let message of content.messages; let index=index" on-mouseover="hoveredIndex=index">
+        <li data-scroll-tokens="$15099841154004583psaCa:matrix.org" *ngFor="let message of content.messages; let index=index;" on-mouseover="hoveredIndex=index">
             <div class="mx_EventTile">
-                <!-- <div class="mx_EventTile_msgOption"><span class="mx_EventTile_readAvatars"><span><img class="mx_BaseAvatar mx_BaseAvatar_image mx_AccessibleButton" src="https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/GQARBLLbPNAsbDPVvKOzncQu?width=14&amp;height=14&amp;method=crop" width="14" height="14" title="Seen by @riot-bot:matrix.org at 21:31" alt="" aria-hidden="true" tabindex="0" role="button" style="left: 0px; top: 0px; visibility: visible;"></span></span>
-                </div> -->
+
                 <div class="mx_EventTile_avatar"><img class="mx_BaseAvatar mx_BaseAvatar_image mx_AccessibleButton" src="https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/GQARBLLbPNAsbDPVvKOzncQu?width=30&amp;height=30&amp;method=crop"
                         width="30" height="30" title="@riot-bot:matrix.org" alt="" tabindex="0" role="button"></div>
                 <div class="mx_SenderProfile" dir="auto">
-                    <span class="mx_SenderProfile_name">{{ message.messages.nickname }}</span>
+                    <span class="mx_SenderProfile_name"><b>{{ message.messages.nickname }}</b> <span style="font-size:8px;"> {{ message.messages.updated_at | date:'shortTime' }}</span></span>
                     <div></div>
                 </div>
-                <div class="mx_EventTile_line"><a href="https://matrix.to/#/!ktYANEKhYuRSNQeiKR:matrix.org/$15099841154004583psaCa:matrix.org"><span class="mx_MessageTimestamp" title="Mon, Nov 6 2017 21:31"> {{ message.messages.updated_at | date:'shortTime' }}</span></a>
-                    <span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body" dir="auto">{{ message.messages.message }}</span></span>
-                    
-                     <span class="mx_EventTile_editButton" title="Options"  [matMenuTriggerFor]="menu">
+                <div *ngFor="let nmp of message.messages.messagesArray" class="mx_EventTile_line">
+                    <a href="https://matrix.to/#/!ktYANEKhYuRSNQeiKR:matrix.org/$15099841154004583psaCa:matrix.org">
+                        <span class="mx_MessageTimestamp"> {{ nmp.timestamp | date:'shortTime' }}
+                        </span>
+                    </a>
+                    <span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body" dir="auto" >{{ nmp.message }}</span></span>
+
+                    <span class="mx_EventTile_editButton" title="Options" [matMenuTriggerFor]="menu">
                     </span>
                     <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
+                        <button mat-menu-item>
                         <span>Remove</span>
                     </button>
-                    <button mat-menu-item>
+                        <button mat-menu-item>
                         <span>Forward Message</span>
                     </button>
-                    <button mat-menu-item>
+                        <button mat-menu-item>
                         <span>View Source</span>
                     </button>
-                    <button mat-menu-item>
+                        <button mat-menu-item>
                         <span>Permalink</span>
                     </button>
-                    <button mat-menu-item>
+                        <button mat-menu-item>
                         <span>Quote</span>
-                    </button>                    
+                    </button>
                     </mat-menu>
                 </div>
             </div>
