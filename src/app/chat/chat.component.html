@@ -18,7 +18,7 @@
 <!-- <button type="button" class="btn btn-default btn-xs" (click)="logout()">
    Logout
 </button> -->
-<form (ngSubmit)="sendMessage()" style="position: fixed;bottom:0;box-sizing: border-box;height:5%" #msgForm="ngForm" *ngIf="joinned" (keyup.enter)="sendMessage()">
+<form (ngSubmit)="sendMessage()" style="position: fixed;bottom:0;box-sizing: border-box;height:5%;margin-top:3%" #msgForm="ngForm" *ngIf="joinned" (keyup.enter)="sendMessage()">
 <msg-app [(cdMsg)] ="msgData.message" [(joinnedMsg)]="joinned"> </msg-app> 
 </form>
 <div class="container">
