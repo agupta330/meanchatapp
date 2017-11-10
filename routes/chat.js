@@ -66,7 +66,7 @@ router.get('/:room', function (req, res, next) {
       if (i != chats.length - 1) {
         chats[i].messagesArray = [];
         chats[i].date = ISOToDateFn(chats[i].updated_at);
-        chats[i + 1].date = ISOToDateFn(chats[i].updated_at);
+        chats[i + 1].date = ISOToDateFn(chats[i+1].updated_at);
         var firstDate = chats[i].date;
         var secondDate = chats[i + 1].date;
         console.log(firstDate)
@@ -97,6 +97,9 @@ router.get('/:room', function (req, res, next) {
 
 
       if (i == chats.length - 1) {
+        chats[i].messagesArray = [];
+        chats[i].date = ISOToDateFn(chats[i].updated_at);
+        chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
         var array = chats;
         var result = [];
         result = array.reduce(function (r, a) {
@@ -115,7 +118,7 @@ router.get('/:room', function (req, res, next) {
             label = days[date.getDay()];
           }
           else {
-            var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do YYYY');
+            var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do');
           }
           r[label] = r[label] || [];
           r[label].push(

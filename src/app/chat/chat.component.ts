@@ -18,7 +18,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   joinned: boolean = false;
   newUser = { nickname: '', room: '' };
   msgData = { room: '', nickname: '', message: '' };
-  message:string="";
+  message: string = "";
   socket = io.connect();
   public sections: any = [];
   // public sections = [
@@ -338,6 +338,18 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   constructor(private chatService: ChatService, private dialogService: DialogService) { }
 
+  getdaysArray() {
+    return [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+  }
+
   ngOnInit() {
     var user = JSON.parse(localStorage.getItem("user"));
     this.getRooms();
@@ -353,7 +365,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       console.log(roomObj);
       if (roomObj != null && roomObj != undefined) {
         if (data.message.room === JSON.parse(localStorage.getItem("user")).room) {
-          console.log(this.chats);
+          // console.log(this.chats);
           var lastKey;
           if (this.chats != undefined && this.chats != null) {
             for (var key in this.chats) {
@@ -362,7 +374,42 @@ export class ChatComponent implements OnInit, AfterViewChecked {
               }
             }
             console.log(lastKey);
-            this.chats[lastKey].push({ "name": this.ISOToDateFn(data.message.updated_at), "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg","messages":data.message });
+            if (lastKey == 'Today') {
+              var lastKeyLength = this.chats[lastKey].length - 1;
+              var lastMessage = this.chats[lastKey][this.chats[lastKey].length - 1].messages;
+              var nowMessage = data.message;
+              if ((lastMessage.nickname == nowMessage.nickname) && (new Date(nowMessage.updated_at).getMinutes() - new Date(lastMessage.updated_at).getMinutes() <= 5)) {
+                console.log("Iam in same cont")
+                this.chats[lastKey][this.chats[lastKey].length - 1].messages.messagesArray.push({ "message": nowMessage.message, "timestamp": nowMessage.updated_at, "nickname": nowMessage.nickname });
+              }
+              if ((lastMessage.nickname != nowMessage.nickname) || (new Date(nowMessage.updated_at).getMinutes() - new Date(lastMessage.updated_at).getMinutes() > 5)) {
+                nowMessage.messagesArray = [];
+                nowMessage.messagesArray.push({ "message": nowMessage.message, "timestamp": nowMessage.updated_at, "nickname": nowMessage.nickname });
+                this.chats[lastKey].push(
+                  {
+                    "name": lastKey,
+                    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
+                    "messages": nowMessage,
+                    "messagesArray": nowMessage.messagesArray
+                  });
+              }
+            }
+            if (lastKey != 'Today') {
+              lastKey = 'Today';
+              var nowMessage = data.message;
+              nowMessage.messagesArray = [];
+              nowMessage.messagesArray.push({ "message": nowMessage.message, "timestamp": nowMessage.updated_at, "nickname": nowMessage.nickname });
+              this.chats[lastKey] = [];
+              this.chats[lastKey].push(
+              {
+                  "name": lastKey,
+                  "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
+                  "messages": nowMessage,
+                  "messagesArray": nowMessage.messagesArray
+              });
+              console.log(this.chats);    
+              this.sections.push({ "name": lastKey, "messages": this.chats[lastKey] })        
+            }
           }
           this.msgData = { room: roomObj.room, nickname: roomObj.nickname, message: '' }
           this.scrollToBottom();
