@@ -1,4 +1,6 @@
+<div style="height:95%">
 <container [sections]="sections" *ngIf="joinned; else joinroom"></container>
+</div>
 <!-- <div class="input-group" *ngIf="joinned" style="padding-left:5px;padding-right:5px;">
     <span class="input-group-btn" style="padding-right:2px;">
         <button class="btn btn-warning btn-sm" id="btn-chat">
@@ -16,7 +18,7 @@
 <!-- <button type="button" class="btn btn-default btn-xs" (click)="logout()">
    Logout
 </button> -->
-<form (ngSubmit)="sendMessage()" #msgForm="ngForm" *ngIf="joinned" (keyup.enter)="sendMessage()">
+<form (ngSubmit)="sendMessage()" style="position: fixed;bottom:0;box-sizing: border-box;height:5%" #msgForm="ngForm" *ngIf="joinned" (keyup.enter)="sendMessage()">
 <msg-app [(cdMsg)] ="msgData.message" [(joinnedMsg)]="joinned"> </msg-app> 
 </form>
 <div class="container">
