@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextMenuModule } from 'ngx-contextmenu';
+import { VirtualScrollModule } from 'angular2-virtual-scroll';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -109,7 +110,8 @@ const ROUTES = [
     MatStepperModule,
     StickyModule,
     ContextMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    VirtualScrollModule
   ],
   providers: [
     ChatService,
