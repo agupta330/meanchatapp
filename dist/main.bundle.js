@@ -969,7 +969,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".header{\r\n  position: fixed;\r\n  top: 0px;\r\n  width:100%;\r\n  z-index: 2;\r\n   background:transparent;  \r\n  color: black; \r\n  height:60px; \r\n  margin-left: 0px;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center\r\n} \r\nul {\r\n  list-style-type: none; \r\n  padding: 5px;\r\n}\r\n \r\nh2 {\r\n    font: 33px sans-serif;\r\n    margin-top: 13px;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n} \r\n\r\n.mx_DateSeparator{clear:both;margin-top:32px;margin-bottom:8px;margin-left:63px;padding-bottom:6px;border-bottom:1px solid #e5e5e5}", ""]);
+exports.push([module.i, ".header{\r\n  position: fixed;\r\n  top: 0px;\r\n  width:100%;\r\n  z-index: 2;\r\n   background:transparent;  \r\n  color: black; \r\n  height:60px; \r\n  margin-left: 0px;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center\r\n} \r\n.header1{\r\n  position: fixed;\r\n  top: 0px;\r\n  width:100%;\r\n  z-index: 2;\r\n   background:transparent;  \r\n  color: black; \r\n  margin-left: 0px;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center;\r\n  border-bottom: 1px solid darkgrey;\r\n  height:12px;\r\n  text-align:center;\r\n} \r\nul {\r\n  list-style-type: none; \r\n  padding: 5px;\r\n}\r\n \r\nh2 {\r\n    font: 33px sans-serif;\r\n    margin-top: 13px;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n} \r\n\r\n.mx_DateSeparator{clear:both;margin-top:32px;margin-bottom:8px;margin-left:63px;padding-bottom:6px;border-bottom:1px solid #e5e5e5}", ""]);
 
 // exports
 
@@ -982,7 +982,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/container/container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n       <h4 class=\"background\" style=\"text-align:center\"><span>{{currentSectionName}}</span></h4> \r\n       <!-- <h4 class=\"mx_DateSeparator\">{{currentSectionName}} </h4>  -->\r\n</div>\r\n<ul>\r\n     <li *ngFor=\"let section of sections;let sectionindex=index\"> \r\n        <section [content]=\"section\" [sectionindex]=\"sectionindex\" [sectionname]=\"section.name\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n     </li> \r\n</ul>"
+module.exports = "<!-- <div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h4 class=\"background\" style=\"text-align:center\"><span>{{currentSectionName}}</span></h4>\r\n</div> -->\r\n<div class=\"header1\" *ngIf=\"currentSectionName!=null\">\r\n      <span style=\"font-size: 25px; background-color: white; padding: 0 10px;border-radius:25px;\" ><span>{{currentSectionName}}</span></span>\r\n</div>\r\n<ul>\r\n      <li *ngFor=\"let section of sections;let sectionindex=index\">\r\n            <section [content]=\"section\" [sectionindex]=\"sectionindex\" [sectionname]=\"section.name\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n      </li>\r\n</ul>"
 
 /***/ }),
 

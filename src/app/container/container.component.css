@@ -9,6 +9,19 @@
   margin-left: 0px;
   align-content: center
 } 
+.header1{
+  position: fixed;
+  top: 0px;
+  width:100%;
+  z-index: 2;
+   background:transparent;  
+  color: black; 
+  margin-left: 0px;
+  align-content: center;
+  border-bottom: 1px solid darkgrey;
+  height:12px;
+  text-align:center;
+} 
 ul {
   list-style-type: none; 
   padding: 5px;

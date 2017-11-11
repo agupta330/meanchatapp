@@ -55,7 +55,9 @@ function getdaysArray() {
 }
 
 router.get('/:room', function (req, res, next) {
-  Chat.find({ room: req.params.room }, function (err, chats) {
+  Chat.find({ room: req.params.room })
+  .sort({updated_at:1})
+  .exec(function (err, chats) {
     if (err) return next(err);
     var chats = chats;
     var chatArray = [];
@@ -66,32 +68,32 @@ router.get('/:room', function (req, res, next) {
       if (i != chats.length - 1) {
         chats[i].messagesArray = [];
         chats[i].date = ISOToDateFn(chats[i].updated_at);
-        chats[i + 1].date = ISOToDateFn(chats[i+1].updated_at);
+        chats[i + 1].date = ISOToDateFn(chats[i + 1].updated_at);
         var firstDate = chats[i].date;
         var secondDate = chats[i + 1].date;
         console.log(firstDate)
         console.log(secondDate);
         if (firstDate == secondDate) {
           console.log("same chat continuing in same day check for nickname same and time five minute");
-          console.log(new Date(chats[i+1].updated_at));
+          console.log(new Date(chats[i + 1].updated_at));
           console.log(new Date(chats[i].updated_at));
-          console.log("minus time", new Date(chats[i+1].updated_at).getMinutes() - new Date(chats[i].updated_at).getMinutes());
-          if ((chats[i].nickname == chats[i + 1].nickname) && (new Date(chats[i+1].updated_at).getMinutes() - new Date(chats[i].updated_at).getMinutes() <= 5)) {
+          console.log("minus time", new Date(chats[i + 1].updated_at).getMinutes() - new Date(chats[i].updated_at).getMinutes());
+          if ((chats[i].nickname == chats[i + 1].nickname) && (new Date(chats[i + 1].updated_at).getMinutes() - new Date(chats[i].updated_at).getMinutes() <= 5)) {
             console.log("Iam in same cont")
-            chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
-            chats[i].messagesArray.push({"message":chats[i+1].message,"timestamp":chats[i+1].updated_at,"nickname":chats[i+1].nickname});
+            chats[i].messagesArray.push({ "message": chats[i].message, "timestamp": chats[i].updated_at, "nickname": chats[i].nickname });
+            chats[i].messagesArray.push({ "message": chats[i + 1].message, "timestamp": chats[i + 1].updated_at, "nickname": chats[i + 1].nickname });
             // delete chats[i+1];
             // delete chats[i+1];
-            chats.splice(i+1, 1)
+            chats.splice(i + 1, 1)
             // var chats = chats;
           }
-          else{
-            chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
+          else {
+            chats[i].messagesArray.push({ "message": chats[i].message, "timestamp": chats[i].updated_at, "nickname": chats[i].nickname });
           }
         }
         if (firstDate != secondDate) {
           console.log("same chat not continuing different day");
-          chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
+          chats[i].messagesArray.push({ "message": chats[i].message, "timestamp": chats[i].updated_at, "nickname": chats[i].nickname });
         }
       }
 
@@ -99,7 +101,7 @@ router.get('/:room', function (req, res, next) {
       if (i == chats.length - 1) {
         chats[i].messagesArray = [];
         chats[i].date = ISOToDateFn(chats[i].updated_at);
-        chats[i].messagesArray.push({"message":chats[i].message,"timestamp":chats[i].updated_at,"nickname":chats[i].nickname});
+        chats[i].messagesArray.push({ "message": chats[i].message, "timestamp": chats[i].updated_at, "nickname": chats[i].nickname });
         var array = chats;
         var result = [];
         result = array.reduce(function (r, a) {
@@ -115,7 +117,10 @@ router.get('/:room', function (req, res, next) {
             var label = 'Yesterday';
           }
           else if (today.getTime() - date.getTime() < 6 * 24 * 60 * 60 * 1000) {
-            label = days[date.getDay()];
+            var label = days[date.getDay()];
+          }
+          else if (today.getFullYear() - date.getFullYear() >= 1) {
+            var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do YYYY');
           }
           else {
             var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do');
@@ -126,7 +131,7 @@ router.get('/:room', function (req, res, next) {
               name: label,
               img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/320px-Hummingbird.jpg",
               messages: a,
-              messagesArray:a.messagesArray
+              messagesArray: a.messagesArray
             });
           return r;
         }, Object.create(null));
