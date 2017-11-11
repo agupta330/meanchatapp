@@ -110,8 +110,8 @@ pre {
     flex: 1 !important;
     padding: 10px 10px 0 10px !important;
     background: #fff !important;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
     -webkit-flex: 1 !important;
     -ms-flex: 1 !important;
     -webkit-overflow-scrolling: touch;

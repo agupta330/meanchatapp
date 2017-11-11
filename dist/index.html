@@ -9,17 +9,45 @@
   <base href="/">
 
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <meta name="viewport" content="width = device-width, initial-scale = 1.0, user-scalable = no, maximum-scale = 1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <!-- Optional theme -->
   <link rel="stylesheet" href="assets/css/bootstrap.theme.css">
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     document.documentElement.addEventListener('touchmove', function (event) {
       event.preventDefault();
     }, false);
+  </script> -->
+  <script>
+    function runIosScript(){
+      console.log("IM HERE");
+      document.documentElement.addEventListener('touchmove', function (event) {
+      event.preventDefault();
+    }, false);
+    }
+    var isMobile = {
+      Windows: function () {
+        return /IEMobile/i.test(navigator.userAgent);
+      },
+      Android: function () {
+        return /Android/i.test(navigator.userAgent);
+      },
+      BlackBerry: function () {
+        return /BlackBerry/i.test(navigator.userAgent);
+      },
+      iOS: function () {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      },
+      any: function () {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+      }
+    };
+    console.log(isMobile.iOS());
+    if(isMobile.iOS()==true){
+      runIosScript();
+    }
   </script>
 </head>
 
