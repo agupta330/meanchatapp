@@ -44,5 +44,6 @@ h2 {
     overflow-x: hidden;
     height: 95vh;
     width: 100%; 
+    -webkit-overflow-scrolling: touch;
 }
 .mx_DateSeparator{clear:both;margin-top:32px;margin-bottom:8px;margin-left:63px;padding-bottom:6px;border-bottom:1px solid #e5e5e5}

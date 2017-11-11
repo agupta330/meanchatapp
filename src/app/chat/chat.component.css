@@ -85,3 +85,9 @@ pre {
 .example-container > * {
   width: 100%;
 }
+  .comments{
+    overflow-x: hidden;
+    height: 95vh;
+    width: 100%; 
+    -webkit-overflow-scrolling: touch;
+}

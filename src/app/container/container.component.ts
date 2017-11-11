@@ -1,5 +1,5 @@
-import { Component, OnInit, Input,OnChanges, ElementRef,HostListener } from '@angular/core';
-import {SectionComponent} from '../section/section.component';
+import { Component, OnInit, Input, OnChanges, ElementRef, HostListener } from '@angular/core';
+import { SectionComponent } from '../section/section.component';
 
 @Component({
     selector: 'container',
@@ -9,11 +9,11 @@ import {SectionComponent} from '../section/section.component';
 export class ContainerComponent implements OnInit {
 
     private currentSectionName: string = null;
-    private sectionsIndex: any = [];  
-    @Input()  sections: any;
+    private sectionsIndex: any = [];
+    @Input() sections: any;
 
 
-    constructor( private el: ElementRef) { }
+    constructor(private el: ElementRef) { }
 
     ngOnInit() {
     }
@@ -33,9 +33,11 @@ export class ContainerComponent implements OnInit {
             this.currentSectionName = this.getCurrentSectionName();
         }
     }
+    @HostListener('scroll') scrolling() {
+        console.log('scrolling');
+    }
 
-
-    @HostListener("window:scroll", [])
+    @HostListener("scroll", [])
     onWindowScroll() {
         this.currentSectionName = this.getCurrentSectionName();
     }
