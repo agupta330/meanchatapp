@@ -120,10 +120,10 @@ router.get('/:room', function (req, res, next) {
             var label = days[date.getDay()];
           }
           else if (today.getFullYear() - date.getFullYear() >= 1) {
-            var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do YYYY');
+            var label = moment(new Date(a.updated_at)).format('dddd, MMMM Do YYYY');
           }
           else {
-            var label = moment(new Date(a.updated_at)).format('dddd,MMMM Do');
+            var label = moment(new Date(a.updated_at)).format('dddd, MMMM Do');
           }
           r[label] = r[label] || [];
           r[label].push(
