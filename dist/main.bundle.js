@@ -986,7 +986,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/container/container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h4 class=\"background\" style=\"text-align:center\"><span>{{currentSectionName}}</span></h4>\r\n</div> -->\r\n<div id=\"comments\" (scroll)=\"onScroll($event)\">\r\n<div class=\"header1\" *ngIf=\"currentSectionName!=null\">\r\n      <span style=\"font-size: 25px; background-color: white; padding: 0 10px;border-radius:25px;\"><span>{{currentSectionName}}</span></span>\r\n</div>\r\n<ul>\r\n      <li *ngFor=\"let section of sections;let sectionindex=index\">\r\n            <section [content]=\"section\" [sectionindex]=\"sectionindex\" [sectionname]=\"section.name\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n      </li>\r\n</ul>\r\n</div>"
+module.exports = "<!-- <div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h4 class=\"background\" style=\"text-align:center\"><span>{{currentSectionName}}</span></h4>\r\n</div> -->\r\n<div id=\"comments\" (scroll)=\"onScroll($event)\">\r\n<div class=\"header1\" *ngIf=\"currentSectionName!=null\">\r\n      <span style=\"font-size: 25px; background-color: white; padding: 0 10px;border-radius:25px;\"><span>{{currentSectionName}}</span></span>\r\n</div>\r\n<ul>\r\n      <li *ngFor=\"let section of sections;let sectionindex=index\">\r\n            <section [content]=\"section\" [sectionindex]=\"sectionindex\" [sectionname]=\"section.name\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n      </li>\r\n</ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1732,7 +1732,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/section/riot.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container_186vsl5\" on-mouseleave=\"hoveredIndex=null\">\r\n    <ol class=\"mx_RoomView_MessageList\" aria-live=\"polite\">\r\n        <li>\r\n            <h2 class=\"mx_DateSeparator\">{{content.name}} </h2>\r\n        </li>\r\n        <li data-scroll-tokens=\"$15099841154004583psaCa:matrix.org\" *ngFor=\"let message of content.messages; let index=index;\" on-mouseover=\"hoveredIndex=index\">\r\n            <div class=\"mx_EventTile\">\r\n\r\n                <div class=\"mx_EventTile_avatar\"><img class=\"mx_BaseAvatar mx_BaseAvatar_image mx_AccessibleButton\" src=\"https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/GQARBLLbPNAsbDPVvKOzncQu?width=30&amp;height=30&amp;method=crop\"\r\n                        width=\"30\" height=\"30\" title=\"@riot-bot:matrix.org\" alt=\"\" tabindex=\"0\" role=\"button\"></div>\r\n                <div class=\"mx_SenderProfile\" dir=\"auto\">\r\n                    <span class=\"mx_SenderProfile_name\"><b>{{ message.messages.nickname }}</b> <span> {{ message.messages.updated_at | date:'shortTime' }}</span></span>\r\n                    <div></div>\r\n                </div>\r\n                <div *ngFor=\"let nmp of message.messages.messagesArray\" class=\"mx_EventTile_line\">\r\n                    <a href=\"https://matrix.to/#/!ktYANEKhYuRSNQeiKR:matrix.org/$15099841154004583psaCa:matrix.org\">\r\n                        <span class=\"mx_MessageTimestamp\"> {{ nmp.timestamp | date:'shortTime' }}\r\n                        </span>\r\n                    </a>\r\n                    <span class=\"mx_MTextBody mx_EventTile_content\"><span class=\"mx_EventTile_body\" dir=\"auto\" *ngIf=\"nmp.message!=''\" >{{ nmp.message }}</span></span>\r\n\r\n                    <span class=\"mx_EventTile_editButton\" title=\"Options\" [matMenuTriggerFor]=\"menu\" (close)=\"closed = true\" >\r\n                    </span>\r\n                    <mat-menu #menu=\"matMenu\">\r\n                        <button mat-menu-item>\r\n                        <span>Remove</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>Forward Message</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>View Source</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>Copy Link</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>Quote</span>\r\n                    </button>\r\n                    </mat-menu>\r\n                </div>\r\n            </div>\r\n        </li>\r\n        <li class=\"mx_RoomView_myReadMarker_container\"></li>\r\n    </ol>\r\n</div>"
+module.exports = "<div class=\"container_186vsl5\" on-mouseleave=\"hoveredIndex=null\">\r\n    <ol class=\"mx_RoomView_MessageList\" aria-live=\"polite\">\r\n        <li>\r\n            <h2 class=\"mx_DateSeparator\">{{content.name}} </h2>\r\n        </li>\r\n        <li data-scroll-tokens=\"$15099841154004583psaCa:matrix.org\" *ngFor=\"let message of content.messages; let index=index;\" on-mouseover=\"hoveredIndex=index\">\r\n            <div class=\"mx_EventTile\">\r\n\r\n                <div class=\"mx_EventTile_avatar\"><img class=\"mx_BaseAvatar mx_BaseAvatar_image mx_AccessibleButton\" src=\"https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/GQARBLLbPNAsbDPVvKOzncQu?width=30&amp;height=30&amp;method=crop\"\r\n                        width=\"30\" height=\"30\" title=\"@riot-bot:matrix.org\" alt=\"\" tabindex=\"0\" role=\"button\"></div>\r\n                <div class=\"mx_SenderProfile\" dir=\"auto\">\r\n                    <span class=\"mx_SenderProfile_name\"><b>{{ message.messages.nickname }}</b> <span> {{ message.messages.updated_at | date:'shortTime' }}</span></span>\r\n                    <div></div>\r\n                </div>\r\n                <div *ngFor=\"let nmp of message.messages.messagesArray\" class=\"mx_EventTile_line\">\r\n                    <a href=\"https://matrix.to/#/!ktYANEKhYuRSNQeiKR:matrix.org/$15099841154004583psaCa:matrix.org\">\r\n                        <span class=\"mx_MessageTimestamp\"> {{ nmp.timestamp | date:'shortTime' }}\r\n                        </span>\r\n                    </a>\r\n                    <span class=\"mx_MTextBody mx_EventTile_content\"><span class=\"mx_EventTile_body\" dir=\"auto\" *ngIf=\"nmp.message!=''\" >{{ nmp.message }}</span></span>\r\n\r\n                    <span class=\"mx_EventTile_editButton\" title=\"Options\" [matMenuTriggerFor]=\"menu\" (click)=\"handleWheelEvent()\" >\r\n                    </span>\r\n                    <mat-menu #menu=\"matMenu\">\r\n                        <button mat-menu-item>\r\n                        <span>Remove</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>Forward Message</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>View Source</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>Copy Link</span>\r\n                    </button>\r\n                        <button mat-menu-item>\r\n                        <span>Quote</span>\r\n                    </button>\r\n                    </mat-menu>\r\n                </div>\r\n            </div>\r\n        </li>\r\n        <li class=\"mx_RoomView_myReadMarker_container\"></li>\r\n    </ol>\r\n</div>"
 
 /***/ }),
 
@@ -1773,6 +1773,16 @@ var SectionComponent = SectionComponent_1 = (function () {
     };
     SectionComponent.prototype.onResize = function (event) {
         this.sectionPosition.emit({ name: this.content.name, position: this.element.nativeElement.offsetTop });
+    };
+    SectionComponent.prototype.handleClickEvent = function (event) {
+        if (event.which == 1) {
+            document.getElementById('comments').style.overflowY = 'scroll';
+        }
+    };
+    SectionComponent.prototype.handleWheelEvent = function () {
+        // var sectionComments = document.getElementById("comments");
+        // document.getElementById('comments').style.overflowX = 'hidden';
+        document.getElementById('comments').style.overflowY = 'hidden';
     };
     SectionComponent.prototype.copyTextToClipboard = function (text) {
         var textArea = document.createElement("textarea");
@@ -1829,6 +1839,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], SectionComponent.prototype, "onResize", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('click', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], SectionComponent.prototype, "handleClickEvent", null);
 SectionComponent = SectionComponent_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'section',

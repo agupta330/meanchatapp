@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ElementRef, EventEmitter, HostListener, Input, Output,ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
 import { ChatService } from '../chat.service';
 @Component({
   selector: 'section',
@@ -33,6 +33,18 @@ export class SectionComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.sectionPosition.emit({ name: this.content.name, position: this.element.nativeElement.offsetTop });
+  }
+  @HostListener('click', ['$event'])
+  handleClickEvent(event) {
+    if(event.which == 1){
+       document.getElementById('comments').style.overflowY = 'scroll';
+    }
+  }
+
+  handleWheelEvent(){
+    // var sectionComments = document.getElementById("comments");
+    // document.getElementById('comments').style.overflowX = 'hidden';
+    document.getElementById('comments').style.overflowY = 'hidden';
   }
   copyTextToClipboard(text) {
     var textArea = document.createElement("textarea");

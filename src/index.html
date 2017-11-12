@@ -15,21 +15,17 @@
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <!-- Optional theme -->
   <link rel="stylesheet" href="assets/css/bootstrap.theme.css">
-  <!-- <script type="text/javascript">
-    document.documentElement.addEventListener('touchmove', function (event) {
-      event.preventDefault();
-    }, false);
-  </script> -->
+  
   <script>
-    function runIosScript(){
+    function runIosScript() {
       console.log("IM HERE");
-    //   document.documentElement.addEventListener('touchmove', function (event) {
-    //   event.preventDefault();
-    // }, false);
-// document.addEventListener('touchend', function (event) {
-//         event.preventDefault();
-//         $(event.target).trigger('click');
-//     }, false);    
+      //   document.documentElement.addEventListener('touchmove', function (event) {
+      //   event.preventDefault();
+      // }, false);
+      // document.addEventListener('touchend', function (event) {
+      //         event.preventDefault();
+      //         $(event.target).trigger('click');
+      //     }, false);    
     }
     var isMobile = {
       Windows: function () {
@@ -49,7 +45,7 @@
       }
     };
     console.log(isMobile.iOS());
-    if(isMobile.iOS()==true){
+    if (isMobile.iOS() == true) {
       runIosScript();
     }
   </script>
