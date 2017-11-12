@@ -1097,7 +1097,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/messagecontainer/messagecontainer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"input-group\" style=\"padding-left:5px;padding-right:5px;\">\r\n    <span class=\"input-group-btn\" style=\"padding-right:5px;\">\r\n        <button (click)=\"logout()\" class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n          Logout\r\n        </button>\r\n    </span>\r\n    <div style=\"width:90%\" contenteditable=\"true\" placeholder=\"Enter text here...\" [textContent]=\"cdMsg\" (input)=\"update($event.target.textContent)\" ></div>\r\n    <span class=\"input-group-btn\" style=\"padding-left:5px;\">\r\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n            Send\r\n        </button>\r\n    </span>\r\n</div>\r\n<br>"
+module.exports = "<div class=\"input-group\" style=\"padding-left:5px;padding-right:5px;background:white\">\r\n    <span class=\"input-group-btn\" style=\"padding-right:5px;\">\r\n        <button (click)=\"logout()\" class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n          Logout\r\n        </button>\r\n    </span>\r\n    <div style=\"width:90%\" contenteditable=\"true\" placeholder=\"Enter text here...\" [textContent]=\"cdMsg\" (input)=\"update($event.target.textContent)\" ></div>\r\n    <span class=\"input-group-btn\" style=\"padding-left:5px;\">\r\n        <button class=\"btn btn-warning btn-sm\" id=\"btn-chat\">\r\n            Send\r\n        </button>\r\n    </span>\r\n</div>\r\n<br>"
 
 /***/ }),
 
