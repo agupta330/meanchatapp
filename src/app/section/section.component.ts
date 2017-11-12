@@ -36,15 +36,23 @@ export class SectionComponent implements OnInit {
   }
   @HostListener('click', ['$event'])
   handleClickEvent(event) {
-    if(event.which == 1){
-       document.getElementById('comments').style.overflowY = 'scroll';
+    if (event.which == 1 && document.getElementById('comments').style.overflowY == 'hidden') {
+      document.getElementById('comments').style.overflowY = 'scroll';
+      // document.getElementById('comments').onmousewheel = document.onmousewheel = null;
+      // document.getElementById('comments').onwheel = null;
+      // document.getElementById('comments').ontouchmove = null;
+      // document.onkeydown = null;
     }
   }
 
-  handleWheelEvent(){
+  handleWheelEvent($event) {
     // var sectionComments = document.getElementById("comments");
     // document.getElementById('comments').style.overflowX = 'hidden';
     document.getElementById('comments').style.overflowY = 'hidden';
+    // document.getElementById('comments').onwheel = $event.preventDefault; // modern standard
+    // document.getElementById('comments').onmousewheel = $event.preventDefault; // older browsers, IE
+    // document.getElementById('comments').ontouchmove = $event.preventDefault; // mobile
+    // document.onkeydown = $event.preventDefault;
   }
   copyTextToClipboard(text) {
     var textArea = document.createElement("textarea");

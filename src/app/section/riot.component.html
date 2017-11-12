@@ -19,7 +19,7 @@
                     </a>
                     <span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body" dir="auto" *ngIf="nmp.message!=''" >{{ nmp.message }}</span></span>
 
-                    <span class="mx_EventTile_editButton" title="Options" [matMenuTriggerFor]="menu" (click)="handleWheelEvent()" >
+                    <span class="mx_EventTile_editButton" title="Options" [matMenuTriggerFor]="menu" (click)="handleWheelEvent($event)" >
                     </span>
                     <mat-menu #menu="matMenu">
                         <button mat-menu-item>
