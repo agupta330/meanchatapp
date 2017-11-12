@@ -986,7 +986,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/container/container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h4 class=\"background\" style=\"text-align:center\"><span>{{currentSectionName}}</span></h4>\r\n</div> -->\r\n<div id=\"comments\">\r\n<div class=\"header1\" *ngIf=\"currentSectionName!=null\">\r\n      <span style=\"font-size: 25px; background-color: white; padding: 0 10px;border-radius:25px;\"><span>{{currentSectionName}}</span></span>\r\n</div>\r\n<ul>\r\n      <li *ngFor=\"let section of sections;let sectionindex=index\">\r\n            <section [content]=\"section\" [sectionindex]=\"sectionindex\" [sectionname]=\"section.name\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n      </li>\r\n</ul>\r\n</div>"
+module.exports = "<!-- <div class=\"header\" *ngIf=\"currentSectionName!=null\">\r\n      <h4 class=\"background\" style=\"text-align:center\"><span>{{currentSectionName}}</span></h4>\r\n</div> -->\r\n<div id=\"comments\" (scroll)=\"onScroll($event)\">\r\n<div class=\"header1\" *ngIf=\"currentSectionName!=null\">\r\n      <span style=\"font-size: 25px; background-color: white; padding: 0 10px;border-radius:25px;\"><span>{{currentSectionName}}</span></span>\r\n</div>\r\n<ul>\r\n      <li *ngFor=\"let section of sections;let sectionindex=index\">\r\n            <section [content]=\"section\" [sectionindex]=\"sectionindex\" [sectionname]=\"section.name\" (sectionPosition)=\"sectionPosition($event)\"></section>\r\n      </li>\r\n</ul>\r\n</div>"
 
 /***/ }),
 
@@ -1028,18 +1028,23 @@ var ContainerComponent = (function () {
             this.currentSectionName = this.getCurrentSectionName();
         }
     };
-    ContainerComponent.prototype.scrolling = function () {
-        console.log('scrolling');
+    ContainerComponent.prototype.onScroll = function ($event) {
+        // console.log('scrolling');
+        this.currentSectionName = this.getCurrentSectionName();
     };
     ContainerComponent.prototype.onWindowScroll = function () {
         this.currentSectionName = this.getCurrentSectionName();
     };
     ContainerComponent.prototype.getCurrentSectionName = function () {
         var offset = this.el.nativeElement.parentElement.offsetTop - this.el.nativeElement.offsetTop;
+        // console.log(offset);
+        // console.log(this.sectionsIndex);
+        var sectionComments = document.getElementById("comments");
+        // console.log(sectionComments);
         for (var _i = 0, _a = this.sectionsIndex; _i < _a.length; _i++) {
             var section = _a[_i];
             //Note: 13px is the margin-top value of the h2 element in the header
-            if ((section.position + offset - window.scrollY - 13) < 0) {
+            if ((section.position + offset - sectionComments.scrollTop - 13) < 0) {
                 return section.name;
             }
         }
@@ -1051,12 +1056,6 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], ContainerComponent.prototype, "sections", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])('scroll'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], ContainerComponent.prototype, "scrolling", null);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"])("scroll", []),
     __metadata("design:type", Function),

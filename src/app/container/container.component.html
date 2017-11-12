@@ -1,7 +1,7 @@
 <!-- <div class="header" *ngIf="currentSectionName!=null">
       <h4 class="background" style="text-align:center"><span>{{currentSectionName}}</span></h4>
 </div> -->
-<div id="comments">
+<div id="comments" (scroll)="onScroll($event)">
 <div class="header1" *ngIf="currentSectionName!=null">
       <span style="font-size: 25px; background-color: white; padding: 0 10px;border-radius:25px;"><span>{{currentSectionName}}</span></span>
 </div>

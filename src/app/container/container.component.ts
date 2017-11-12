@@ -33,8 +33,10 @@ export class ContainerComponent implements OnInit {
             this.currentSectionName = this.getCurrentSectionName();
         }
     }
-    @HostListener('scroll') scrolling() {
-        console.log('scrolling');
+
+    onScroll($event){
+        // console.log('scrolling');
+        this.currentSectionName = this.getCurrentSectionName();
     }
 
     @HostListener("scroll", [])
@@ -44,9 +46,13 @@ export class ContainerComponent implements OnInit {
 
     private getCurrentSectionName(): string {
         let offset: number = this.el.nativeElement.parentElement.offsetTop - this.el.nativeElement.offsetTop;
+        // console.log(offset);
+        // console.log(this.sectionsIndex);
+        var sectionComments = document.getElementById("comments");
+        // console.log(sectionComments);
         for (let section of this.sectionsIndex) {
             //Note: 13px is the margin-top value of the h2 element in the header
-            if ((section.position + offset - window.scrollY - 13) < 0) {
+            if ((section.position + offset - sectionComments.scrollTop - 13) < 0) {
                 return section.name;
             }
         }
